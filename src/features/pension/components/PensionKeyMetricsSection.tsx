@@ -23,7 +23,7 @@ export async function PensionKeyMetricsSection({
         </div>
 
         <div
-          className="rounded-lg border border-stone-200/90 bg-white/70 p-5 sm:p-6"
+          className="rounded-lg border border-stone-200/55 bg-white/40 p-5 sm:p-6"
           role="note"
           aria-label={t("howToReadAria")}
         >
@@ -36,7 +36,7 @@ export async function PensionKeyMetricsSection({
         </div>
 
         <div className="grid gap-6 sm:grid-cols-3 sm:gap-5">
-          <div className="rounded-lg border border-stone-200/80 bg-white/50 p-5 sm:p-6">
+          <div className="rounded-lg border border-stone-200/55 bg-white/38 p-5 sm:p-6">
             <p className="text-xs font-medium uppercase tracking-wider text-stone-500">
               {t("latestLabel")}
             </p>
@@ -47,7 +47,7 @@ export async function PensionKeyMetricsSection({
               {t("latestYearNote", { year: metrics.latestYear })}
             </p>
           </div>
-          <div className="rounded-lg border border-stone-200/80 bg-white/50 p-5 sm:p-6">
+          <div className="rounded-lg border border-stone-200/55 bg-white/38 p-5 sm:p-6">
             <p className="text-xs font-medium uppercase tracking-wider text-stone-500">
               {t("growthLabel", { year: metrics.baselineYear })}
             </p>
@@ -58,7 +58,7 @@ export async function PensionKeyMetricsSection({
               {t("growthHint")}
             </p>
           </div>
-          <div className="rounded-lg border border-stone-200/80 bg-white/50 p-5 sm:p-6">
+          <div className="rounded-lg border border-stone-200/55 bg-white/38 p-5 sm:p-6">
             <p className="text-xs font-medium uppercase tracking-wider text-stone-500">
               {t("spanLabel")}
             </p>
