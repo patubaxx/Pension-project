@@ -1,19 +1,20 @@
 import "server-only";
 
 import type { AppLocale } from "@/lib/i18n/routing";
-import { runFundingPipeline } from "@/lib/data";
+import { loadProcessedPensionAssets } from "@/lib/data";
 import type { HomeStoryViewModel } from "../model/types";
 import { toFundingOverviewViewModel } from "../transforms/toFundingOverview";
+import { toKeyMetricsViewModel } from "../transforms/toKeyMetricsViewModel";
+import { toSignatureChartViewModel } from "../transforms/toSignatureChartModel";
 
 export async function loadHomeStoryViewModel(
   locale: AppLocale
 ): Promise<HomeStoryViewModel> {
-  try {
-    const { processed } = await runFundingPipeline();
-    return {
-      fundingOverview: toFundingOverviewViewModel(processed, locale),
-    };
-  } catch {
-    return { fundingOverview: null };
-  }
+  const processed = await loadProcessedPensionAssets();
+
+  return {
+    fundingOverview: toFundingOverviewViewModel(processed, locale),
+    signatureChart: toSignatureChartViewModel(processed),
+    keyMetrics: toKeyMetricsViewModel(processed, locale),
+  };
 }

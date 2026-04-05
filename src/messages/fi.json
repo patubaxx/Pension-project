@@ -25,15 +25,27 @@
     "sections": {
       "fundingOverview": {
         "title": "Rahoituksen kokonaiskuva",
-        "placeholder": "Tähän tulee yhteenveto maksuista ja rahoitustasapainosta. Paikkamerkki vaiheelle 2."
+        "lead": "Lakisääteinen työeläkejärjestelmä rahoitetaan osin sijoitusvarannoilla, jotka työeläkelaitosten taseissa muodostavat eläkevaroja. Näiden rahoitusvarantojen koko kertoo, kuinka suureksi järjestelmän puskuri on kasvanut ajan myötä.",
+        "highlight": "Vuoden {year} lopussa työeläkelaitosten rahoitusvarat olivat noin {amount} (kansantalouden tilinpitö, varastosaldot).",
+        "attribution": "Lähde: Tilastokeskus, kansantalouden tilinpito (RTP), sektori S13141 työeläkelaitokset, instrumentti rahoitusvarat yhteensä (F0), miljoonaa euroa."
       },
       "signatureViz": {
-        "title": "Päävisualisointi",
-        "placeholder": "Päänarratiivin kaavio tulee tähän. Lopullista kaaviota ei ole vaiheessa 1."
+        "title": "Eläkevarat ajan yli",
+        "deck": "Työeläkelaitosten taseen rahoitusvarat kansantalouden tilinpidon mukaan. Arvot ovat vuoden lopun varastosaldoja, ei vuotuisia virtoja.",
+        "caption": "Kansantalouden tilinpidon lukuja tarkistetaan ja korjataan menetelmä- ja lähdemuutosten myötä; uusin vuosi voi olla alustava. Akseli: miljardia euroa.",
+        "ariaLabel": "Käyrä työeläkelaitosten rahoitusvaroista vuosina {from}–{to}.",
+        "chartYear": "Vuosi",
+        "axisBillionsEur": "mrd €"
       },
-      "supportingViz": {
-        "title": "Tukevat näkymät",
-        "placeholder": "Lisäkonteksti ja vertailut tulevat tähän."
+      "keyMetrics": {
+        "title": "Kontekstissa",
+        "latestLabel": "Viimeisin vuoden loppu",
+        "latestYearNote": "Varastosaldo, {year}",
+        "growthLabel": "Muutos vuodesta {year}",
+        "growthHint": "Suhteessa sarjan ensimmäiseen vuoteen.",
+        "spanLabel": "Sarjan pituus",
+        "yearCount": "{count} vuosipistettä",
+        "spanHint": "Peräkkäiset vuodet prosessoidussa sarjassa."
       },
       "methodologyPreview": {
         "title": "Menetelmä",
@@ -45,30 +57,30 @@
         "body": "Jokainen luku pohjautuu dokumentoituihin lähteisiin. Lähteet-sivulla on viitteet ja dataketju.",
         "cta": "Näytä lähteet"
       }
-    },
-    "pipelineSample": {
-      "label": "Esimerkki putken tarkistus",
-      "value": "Vuonna {year} esimerkkivarat: {amount} (näyte-JSON, ei virallista tilastoa)."
     }
   },
   "MethodologyPage": {
     "title": "Menetelmä",
-    "intro": "Tälle sivulle tulee dokumentaatio datakäsittelystä, oletuksista ja päivitysrytmistä. Runko vaiheelle 1.",
-    "listTitle": "Suunnitellut kerrokset",
+    "intro": "Vaiheessa 2 käytetään toistettavaa polkua: virallinen PxWeb -vastaus tallennetaan raakana, validoidaan, normalisoidaan prosessoiduksi JSON-tiedostoksi ja muunnetaan näkymä- ja kaaviomalleiksi. Tälle sivulle tulee myöhemmin laajempi menetelmäteksti.",
+    "listTitle": "Datakerrokset",
     "layers": {
-      "raw": "Raw — muuttumattomat lähteet sellaisenaan",
-      "validate": "Validointi — skeematarkistukset (Zod)",
-      "normalize": "Normalisointi — yhtenäiset yksiköt ja tunnisteet",
-      "processed": "Prosessoitu — kuratoidut taulukot analyysiin",
-      "transform": "Muunnos — kaavio- ja teksti-mallit"
+      "raw": "Raw — PxWeb JSON-stat sellaisenaan",
+      "validate": "Validointi — Zod-skeemat raa’alle ja prosessoidulle muodolle",
+      "normalize": "Normalisointi — vuosittainen sarja miljoonina euroina",
+      "processed": "Prosessoitu — versionitu JSON, jota sovellus lukee",
+      "transform": "Muunnos — näkymämallit osioille ja kaavioille"
     }
   },
   "SourcesPage": {
     "title": "Lähteet",
-    "intro": "Viralliset linkit ja aineistojen huomiot listataan tähän. Runko vaiheelle 1."
+    "intro": "Etusivulla vaiheessa 2 käytetty ensisijainen aineisto:",
+    "statfinHeading": "Kansantalouden tilinpito — työeläkevarat",
+    "statfinBody": "Tilastokeskuksen taulukko 11qp (rahoitusvarat ja -velat, vuosi). Sarake: sektori S13141 työeläkelaitokset, instrumentti F0 rahoitusvarat yhteensä, varastosaldot miljoonina euroina.",
+    "statfinPxLabel": "PxWeb-taulukko (StatFin)",
+    "statfinDocLabel": "RTP-dokumentaatio"
   },
   "Footer": {
-    "note": "Vaiheen 1 perusta — sisältö ja visuaalit kehittyvät myöhemmin."
+    "note": "Vaihe 2 — virallinen Tilastokeskuksen sarja; päivitä komennoilla npm run ingest && npm run transform:data."
   },
   "NotFound": {
     "title": "Sivua ei löytynyt",

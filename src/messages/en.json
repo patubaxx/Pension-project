@@ -25,15 +25,27 @@
     "sections": {
       "fundingOverview": {
         "title": "Funding overview",
-        "placeholder": "This section will summarize contribution structures and funding balances. Placeholder for Phase 2."
+        "lead": "Finland’s statutory earnings-related pensions are partly funded through invested reserves held by employment pension schemes. The stock of those financial assets is one useful lens on how large the system’s buffer has become over time.",
+        "highlight": "At year-end {year}, employment pension schemes held about {amount} in financial assets (national accounts, stock positions).",
+        "attribution": "Source: Statistics Finland, national financial accounts (RTP), sector S13141 employment pension schemes, instrument total financial assets (F0), million euros."
       },
       "signatureViz": {
-        "title": "Signature visualization",
-        "placeholder": "The main narrative chart will live here. No final chart in Phase 1."
+        "title": "Pension assets over time",
+        "deck": "Total financial assets on employment pension schemes’ balance sheets, as recorded in Finland’s national accounts. Values are stock positions at year-end, not annual flows.",
+        "caption": "National accounts figures are revised as methods and source data improve; the latest year is sometimes provisional. Axis shows billions of euro.",
+        "ariaLabel": "Line chart of employment pension scheme financial assets from {from} to {to}.",
+        "chartYear": "Year",
+        "axisBillionsEur": "bn EUR"
       },
-      "supportingViz": {
-        "title": "Supporting views",
-        "placeholder": "Additional context and comparisons will appear here."
+      "keyMetrics": {
+        "title": "In context",
+        "latestLabel": "Latest year-end",
+        "latestYearNote": "Stock position, {year}",
+        "growthLabel": "Change since {year}",
+        "growthHint": "Versus first year in this series.",
+        "spanLabel": "Observation span",
+        "yearCount": "{count} annual points",
+        "spanHint": "Consecutive years in the processed series."
       },
       "methodologyPreview": {
         "title": "Methodology",
@@ -45,30 +57,30 @@
         "body": "Every figure traces back to documented inputs. The sources page lists references and data lineage.",
         "cta": "View sources"
       }
-    },
-    "pipelineSample": {
-      "label": "Illustrative pipeline check",
-      "value": "As of {year}, illustrative total assets: {amount} (sample JSON, not official statistics)."
     }
   },
   "MethodologyPage": {
     "title": "Methodology",
-    "intro": "This page will document data handling, assumptions, and update cadence. Skeleton for Phase 1.",
-    "listTitle": "Planned layers",
+    "intro": "Phase 2 uses a reproducible path: official PxWeb extracts are stored raw, validated, normalized into a processed JSON artifact, then transformed into chart view models. This page will gain fuller methodology text in a later phase.",
+    "listTitle": "Data layers",
     "layers": {
-      "raw": "Raw — immutable inputs as received",
-      "validate": "Validation — schema checks (Zod)",
-      "normalize": "Normalize — consistent units and identifiers",
-      "processed": "Processed — curated tables for analysis",
-      "transform": "Transform — chart- and copy-ready view models"
+      "raw": "Raw — PxWeb JSON-stat as retrieved",
+      "validate": "Validation — Zod schemas for raw and processed shapes",
+      "normalize": "Normalize — ordered annual series in million EUR",
+      "processed": "Processed — versioned JSON consumed by the app",
+      "transform": "Transform — view models for sections and charts"
     }
   },
   "SourcesPage": {
     "title": "Sources",
-    "intro": "Official links and dataset notes will be listed here. Skeleton for Phase 1."
+    "intro": "Primary dataset used on the homepage in Phase 2:",
+    "statfinHeading": "National financial accounts — employment pension assets",
+    "statfinBody": "Statistics Finland table 11qp (financial assets and liabilities, annual). Series: sector S13141 employment pension schemes, instrument F0 total financial assets, stock positions in million euros.",
+    "statfinPxLabel": "PxWeb table (StatFin)",
+    "statfinDocLabel": "RTP documentation"
   },
   "Footer": {
-    "note": "Phase 1 foundation — content and visuals evolve in later phases."
+    "note": "Phase 2 — official Statistics Finland series; ingest with npm run ingest && npm run transform:data."
   },
   "NotFound": {
     "title": "Page not found",

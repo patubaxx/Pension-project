@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "provider": "Statistics Finland",
+    "datasetId": "statfin_rtp_pxt_11qp",
+    "datasetTitle": "Financial assets and liabilities, annually (employment pension schemes)",
+    "seriesDefinition": "Sector S13141 (Employment pension schemes), instrument F0 (Financial assets total), stock positions, million euros.",
+    "documentationUrl": "https://stat.fi/en/statistics/rtp",
+    "pxWebTableUrl": "https://pxdata.stat.fi/PXWeb/pxweb/en/StatFin/rtp/statfin_rtp_pxt_11qp.px/",
+    "retrievedAt": "2026-04-05T10:54:58.690Z",
+    "notes": [
+      "National financial accounts, ESA 2010. Sector S13141 = employment pension schemes.",
+      "Instrument F0 = total financial assets (stock, million EUR). Latest year may be revised in subsequent releases."
+    ]
+  },
+  "unit": "MEUR_STOCK",
+  "series": [
+    {
+      "year": 1995,
+      "assetsMillionEur": 40424
+    },
+    {
+      "year": 1996,
+      "assetsMillionEur": 46145
+    },
+    {
+      "year": 1997,
+      "assetsMillionEur": 51991
+    },
+    {
+      "year": 1998,
+      "assetsMillionEur": 57039
+    },
+    {
+      "year": 1999,
+      "assetsMillionEur": 68029
+    },
+    {
+      "year": 2000,
+      "assetsMillionEur": 63899
+    },
+    {
+      "year": 2001,
+      "assetsMillionEur": 66656
+    },
+    {
+      "year": 2002,
+      "assetsMillionEur": 68152
+    },
+    {
+      "year": 2003,
+      "assetsMillionEur": 74518
+    },
+    {
+      "year": 2004,
+      "assetsMillionEur": 86660
+    },
+    {
+      "year": 2005,
+      "assetsMillionEur": 100402
+    },
+    {
+      "year": 2006,
+      "assetsMillionEur": 114038
+    },
+    {
+      "year": 2007,
+      "assetsMillionEur": 124973
+    },
+    {
+      "year": 2008,
+      "assetsMillionEur": 105839
+    },
+    {
+      "year": 2009,
+      "assetsMillionEur": 124727
+    },
+    {
+      "year": 2010,
+      "assetsMillionEur": 140721
+    },
+    {
+      "year": 2011,
+      "assetsMillionEur": 137253
+    },
+    {
+      "year": 2012,
+      "assetsMillionEur": 150527
+    },
+    {
+      "year": 2013,
+      "assetsMillionEur": 161314
+    },
+    {
+      "year": 2014,
+      "assetsMillionEur": 175270
+    },
+    {
+      "year": 2015,
+      "assetsMillionEur": 183655
+    },
+    {
+      "year": 2016,
+      "assetsMillionEur": 192048
+    },
+    {
+      "year": 2017,
+      "assetsMillionEur": 206917
+    },
+    {
+      "year": 2018,
+      "assetsMillionEur": 196471
+    },
+    {
+      "year": 2019,
+      "assetsMillionEur": 216101
+    },
+    {
+      "year": 2020,
+      "assetsMillionEur": 224662
+    },
+    {
+      "year": 2021,
+      "assetsMillionEur": 256303
+    },
+    {
+      "year": 2022,
+      "assetsMillionEur": 243996
+    },
+    {
+      "year": 2023,
+      "assetsMillionEur": 254636
+    },
+    {
+      "year": 2024,
+      "assetsMillionEur": 276481
+    },
+    {
+      "year": 2025,
+      "assetsMillionEur": 288116
+    }
+  ]
+}

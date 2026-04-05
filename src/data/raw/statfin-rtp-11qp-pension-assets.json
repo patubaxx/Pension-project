@@ -1,0 +1,218 @@
+{
+  "version": "2.0",
+  "class": "dataset",
+  "label": "Financial assets and liabilities, annually by Instrument, Sector, Debtor sector, Year and Information",
+  "source": "Statistics Finland, financial accounts",
+  "updated": "2026-03-31T05:00:00Z",
+  "note": [
+    "<A HREF='https://stat.fi/en/statistics/documentation/rtp' TARGET=_blank>Documentation of statistics</A>"
+  ],
+  "role": {
+    "time": ["Vuosi"],
+    "metric": ["Tiedot"]
+  },
+  "id": ["Vara", "Sektori", "Velallissektori", "Vuosi", "Tiedot"],
+  "size": [1, 1, 1, 31, 1],
+  "dimension": {
+    "Vara": {
+      "label": "Instrument",
+      "note": ["Instrument"],
+      "category": {
+        "index": {
+          "F0": 0
+        },
+        "label": {
+          "F0": "F0 Financial assets total"
+        }
+      },
+      "extension": {
+        "elimination": true,
+        "eliminationValueCode": "F0",
+        "show": "value"
+      },
+      "link": {
+        "describedby": [
+          {
+            "extension": {
+              "Vara": "SCALE-TYPE=nominal"
+            }
+          }
+        ]
+      }
+    },
+    "Sektori": {
+      "label": "Sector",
+      "category": {
+        "index": {
+          "S13141": 0
+        },
+        "label": {
+          "S13141": "S13141 Employment pension schemes"
+        }
+      },
+      "extension": {
+        "elimination": false,
+        "show": "value"
+      },
+      "link": {
+        "describedby": [
+          {
+            "extension": {
+              "Sektori": "SCALE-TYPE=nominal"
+            }
+          }
+        ]
+      }
+    },
+    "Velallissektori": {
+      "label": "Debtor sector",
+      "note": ["Debtor"],
+      "category": {
+        "index": {
+          "S0": 0
+        },
+        "label": {
+          "S0": "S0 Total"
+        }
+      },
+      "extension": {
+        "elimination": true,
+        "eliminationValueCode": "S0",
+        "show": "value"
+      },
+      "link": {
+        "describedby": [
+          {
+            "extension": {
+              "Velallissektori": "SCALE-TYPE=nominal"
+            }
+          }
+        ]
+      }
+    },
+    "Vuosi": {
+      "label": "Year",
+      "category": {
+        "index": {
+          "1995": 0,
+          "1996": 1,
+          "1997": 2,
+          "1998": 3,
+          "1999": 4,
+          "2000": 5,
+          "2001": 6,
+          "2002": 7,
+          "2003": 8,
+          "2004": 9,
+          "2005": 10,
+          "2006": 11,
+          "2007": 12,
+          "2008": 13,
+          "2009": 14,
+          "2010": 15,
+          "2011": 16,
+          "2012": 17,
+          "2013": 18,
+          "2014": 19,
+          "2015": 20,
+          "2016": 21,
+          "2017": 22,
+          "2018": 23,
+          "2019": 24,
+          "2020": 25,
+          "2021": 26,
+          "2022": 27,
+          "2023": 28,
+          "2024": 29,
+          "2025": 30
+        },
+        "label": {
+          "1995": "1995",
+          "1996": "1996",
+          "1997": "1997",
+          "1998": "1998",
+          "1999": "1999",
+          "2000": "2000",
+          "2001": "2001",
+          "2002": "2002",
+          "2003": "2003",
+          "2004": "2004",
+          "2005": "2005",
+          "2006": "2006",
+          "2007": "2007",
+          "2008": "2008",
+          "2009": "2009",
+          "2010": "2010",
+          "2011": "2011",
+          "2012": "2012",
+          "2013": "2013",
+          "2014": "2014",
+          "2015": "2015",
+          "2016": "2016",
+          "2017": "2017",
+          "2018": "2018",
+          "2019": "2019",
+          "2020": "2020",
+          "2021": "2021",
+          "2022": "2022",
+          "2023": "2023",
+          "2024": "2024",
+          "2025": "2025"
+        }
+      },
+      "extension": {
+        "elimination": false,
+        "show": "value"
+      }
+    },
+    "Tiedot": {
+      "label": "Information",
+      "category": {
+        "index": {
+          "K": 0
+        },
+        "label": {
+          "K": "Stocks, millions of euro"
+        },
+        "unit": {
+          "K": {
+            "base": "Million euros",
+            "decimals": 0
+          }
+        }
+      },
+      "extension": {
+        "elimination": false,
+        "show": "value"
+      }
+    }
+  },
+  "extension": {
+    "px": {
+      "tableid": "statfin_rtp_pxt_11qp",
+      "decimals": 0,
+      "official-statistics": true,
+      "aggregallowed": true,
+      "language": "fi",
+      "contents": "Financial assets and liabilities, annually",
+      "description": "11qp -- Financial assets and liabilities, annually, 1995-2025",
+      "descriptiondefault": false,
+      "heading": ["Velallissektori", "Vuosi", "Tiedot"],
+      "stub": ["Vara", "Sektori"],
+      "matrix": "001_11qp_2025",
+      "subject-code": "RTP",
+      "subject-area": "rtp"
+    },
+    "contact": [
+      {
+        "raw": "<A HREF='https://stat.fi/en/statistics/rtp' TARGET=_blank>Statistics' homepage</A>"
+      }
+    ]
+  },
+  "value": [
+    40424, 46145, 51991, 57039, 68029, 63899, 66656, 68152, 74518, 86660,
+    100402, 114038, 124973, 105839, 124727, 140721, 137253, 150527, 161314,
+    175270, 183655, 192048, 206917, 196471, 216101, 224662, 256303, 243996,
+    254636, 276481, 288116
+  ]
+}

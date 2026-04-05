@@ -5,8 +5,11 @@ const localeMap: Record<AppLocale, string> = {
   fi: "fi-FI",
 };
 
+/**
+ * @param valueBillions — absolute amount in billions of EUR (e.g. 288.1)
+ */
 export function formatBillionEur(
-  value: number,
+  valueBillions: number,
   locale: AppLocale,
   fractionDigits = 1
 ): string {
@@ -17,5 +20,25 @@ export function formatBillionEur(
     notation: "compact",
     compactDisplay: "short",
     maximumFractionDigits: fractionDigits,
-  }).format(value * 1e9);
+  }).format(valueBillions * 1e9);
+}
+
+/** Stock positions reported in million EUR → compact currency in billions. */
+export function formatBillionsFromMillionEur(
+  assetsMillionEur: number,
+  locale: AppLocale,
+  fractionDigits = 1
+): string {
+  return formatBillionEur(assetsMillionEur / 1000, locale, fractionDigits);
+}
+
+/** Chart axis / tooltip: billions with fewer digits, no currency symbol clutter. */
+export function formatBillionsShortAxis(
+  valueBillions: number,
+  locale: AppLocale
+): string {
+  const intlLocale = localeMap[locale];
+  return new Intl.NumberFormat(intlLocale, {
+    maximumFractionDigits: valueBillions >= 100 ? 0 : 1,
+  }).format(valueBillions);
 }

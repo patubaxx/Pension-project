@@ -1,18 +1,23 @@
+import type { ProcessedPensionAssetsFile } from "@/lib/data";
 import type { AppLocale } from "@/lib/i18n/routing";
-import { formatBillionEur } from "@/lib/formatting";
-import type { ProcessedFundingSnapshot } from "@/lib/data";
+import { formatBillionsFromMillionEur } from "@/lib/formatting";
 import type { FundingOverviewViewModel } from "../model/types";
 
 export function toFundingOverviewViewModel(
-  processed: ProcessedFundingSnapshot,
+  processed: ProcessedPensionAssetsFile,
   locale: AppLocale
 ): FundingOverviewViewModel {
+  const series = processed.series;
+  const latest = series[series.length - 1];
+  const first = series[0];
+
   return {
-    asOfYear: processed.asOfYear,
-    formattedAssetsCompact: formatBillionEur(
-      processed.totalAssetsBillionEur,
+    latestYear: latest.year,
+    latestFormatted: formatBillionsFromMillionEur(
+      latest.assetsMillionEur,
       locale
     ),
-    sourceNote: processed.sourceNote,
+    firstYear: first.year,
+    latestBillions: latest.assetsMillionEur / 1000,
   };
 }

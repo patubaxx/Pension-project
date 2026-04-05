@@ -1,4 +1,6 @@
-export { runFundingPipeline, type FundingPipelineResult } from "./pipeline";
-export type { ProcessedFundingSnapshot, FundingSeriesPoint } from "./types";
-export { validateFundingSnapshot } from "./validate";
-export { rawFundingSnapshotSchema, type RawFundingSnapshot } from "./schemas";
+export { loadProcessedPensionAssets } from "./pensionAssets/loadProcessed";
+export type {
+  ProcessedObservation,
+  ProcessedPensionAssetsFile,
+} from "./pensionAssets/processedSchema";
+export { STATFIN_PENSION_ASSETS } from "./pensionAssets/sourceConstants";
