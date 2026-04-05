@@ -1,6 +1,6 @@
 # Pension Project — ratkaisusuunnitelma
 
-> **Huom:** Tämä on alkuperäinen suunnitteludokumentti. Nykyinen toteutus ja datalähde on kuvattu englanniksi `README.md`-tiedostossa sekä `docs/architecture.md`- ja `docs/data-pipeline.md` -dokumenteissa (toteutuksessa käytössä Tilastokeskuksen RTP / 11qp -sarja). Julkinen repo on **sovellus / referenssitoteutus**, ei erillinen npm-kirjasto.
+> **Huom:** Tämä on alkuperäinen suunnitteludokumentti. Nykyinen toteutus ja datalähde on kuvattu englanniksi `README.md`-tiedostossa sekä `docs/architecture.md`- ja `docs/data-pipeline.md` -dokumenteissa (toteutuksessa käytössä Tilastokeskuksen RTP / 11qp -sarja). Julkinen repo on **sovellus / referenssitoteutus**, ei erillinen npm-kirjasto. 
 
 ## 1. Projektin tarkoitus
 
