@@ -2,7 +2,7 @@
   "Meta": {
     "siteName": "Pension Project",
     "homeTitle": "Finnish pension funding",
-    "homeDescription": "An editorial view of employment pension reserves in Finland’s national accounts—what the measure is, why it matters, and how to read it carefully.",
+    "homeDescription": "An editorial view of Finnish employment pension funding: national-accounts asset stocks (Statistics Finland) and annual system flows (ETK)—what the measures are and how to read them carefully.",
     "methodologyTitle": "Methodology",
     "methodologyDescription": "How we source, validate, and present pension funding data.",
     "sourcesTitle": "Sources",
@@ -57,7 +57,7 @@
       "fundingFlows": {
         "timeRangeKicker": "{from}–{to}",
         "title": "Annual flows in the earnings-related system",
-        "intro": "Alongside the national-accounts asset stock, Eläketurvakeskus (ETK) publishes annual money-flow lines from supervised insurers: premiums collected, pensions paid out, and the investment result. These are institutional cash-flow concepts—not the same as the RTP balance-sheet total above, and not a verdict on solvency.",
+        "intro": "Eläketurvakeskus (ETK) publishes annual insurer-reported flows: premiums, pensions paid, and investment result. This complements the RTP stock chart above; how it differs from that series and what the narrow net means are spelled out in the note below the charts.",
         "chartA": {
           "caption": "Three lines, same scale: how large are premiums, investment results, and benefit outlays each year?",
           "ariaLabel": "Multi-line chart of annual premiums, investment result, and pension outlays from {from} to {to}.",
@@ -81,11 +81,11 @@
           "legendPositive": "Year with positive narrow net",
           "legendNegative": "Year with negative narrow net",
           "readTitle": "What this net does (and does not) mean",
-          "readBody": "This is exactly the processed definition: contributions plus investment result minus pensions paid. It ignores other ETK lines (state shares, operating costs, taxes, transfers, etc.). It is a simple orientation aid—not full funding health and not actuarial balance.",
+          "readBody": "Same formula as in the processed file: contributions + investment result − pensions paid, excluding other ETK lines. Orientation only—see the distinctions note below for limits.",
           "emptyState": "No net flow series is available for this view."
         },
         "caveatTitle": "Important distinctions",
-        "caveatBody": "ETK flow and asset figures follow insurer reporting and differ from Statistics Finland RTP sector S13141 stock totals used in the chart above. The narrow net here is not a solvency measure. Latest years may be revised when final financial statements are incorporated.",
+        "caveatBody": "ETK figures follow insurer reporting and differ from Statistics Finland RTP sector S13141 stock totals used in the signature chart. The narrow net is not a solvency measure. Latest years may be revised when financial statements are finalized.",
         "sourceNote": "Flows: ETK tilastotietokanta, rahavirrat01_kaikki (institutions combined). Tooltips use one decimal; axis labels are shortened."
       },
       "keyMetrics": {
@@ -110,7 +110,7 @@
         "methodologyBody": "We document ingestion, validation, normalization, and the transforms that turn processed JSON into chart-ready view models—so the story stays auditable as it grows.",
         "methodologyCta": "Read methodology",
         "sourcesTitle": "Sources",
-        "sourcesBody": "The homepage chart traces to Statistics Finland’s national financial accounts table (11qp) for sector S13141 and instrument F0, with lineage on the sources page.",
+        "sourcesBody": "The story uses two extracts: Statistics Finland RTP (11qp, sector S13141, instrument F0) for the asset stock line, and ETK rahavirrat01_kaikki for annual flows and the derived narrow net. Links and short descriptions are on the sources page.",
         "sourcesCta": "View sources"
       }
     }
@@ -118,6 +118,7 @@
   "MethodologyPage": {
     "title": "Methodology",
     "intro": "The site uses a reproducible path: official PxWeb extracts are stored raw, validated, normalized into a processed JSON artifact, then transformed into chart view models. Fuller narrative methodology may be added later.",
+    "datasetsNote": "The story page combines two processed extracts: Statistics Finland RTP (11qp, sector S13141, instrument F0) for the year-end asset stock line, and ETK rahavirrat01_kaikki for annual flows. The bar chart net is a narrow derived figure from the ETK file (contributions + investment result − pensions paid, excluding other lines); it is not a solvency indicator, and ETK flows are not interchangeable with RTP stock totals.",
     "listTitle": "Data layers",
     "layers": {
       "raw": "Raw — PxWeb JSON-stat as retrieved",
@@ -129,14 +130,18 @@
   },
   "SourcesPage": {
     "title": "Sources",
-    "intro": "Primary dataset used on the homepage:",
+    "intro": "Datasets used on the homepage story:",
     "statfinHeading": "National financial accounts — employment pension assets",
-    "statfinBody": "Statistics Finland table 11qp (financial assets and liabilities, annual). Series: sector S13141 employment pension schemes, instrument F0 total financial assets, stock positions in million euros.",
+    "statfinBody": "Statistics Finland table 11qp (financial assets and liabilities, annual). Series: sector S13141 employment pension schemes, instrument F0 total financial assets, stock positions in million euros. Used for the signature asset stock line and supporting metrics.",
     "statfinPxLabel": "PxWeb table (StatFin)",
-    "statfinDocLabel": "RTP documentation"
+    "statfinDocLabel": "RTP documentation",
+    "etkHeading": "ETK — earnings-related pension funding flows",
+    "etkBody": "ETK PxWeb table rahavirrat01_kaikki (pension assets and funding flows, million EUR): annual flow lines from supervised insurers, all institutions combined (code 399). Powers the story’s flow charts and the derived narrow-net bar chart—not the RTP stock series above.",
+    "etkPxLabel": "PxWeb table (ETK)",
+    "etkDocLabel": "ETK — statistic page"
   },
   "Footer": {
-    "note": "Phase 3 — official Statistics Finland series; refresh data with npm run ingest && npm run transform:data."
+    "note": "Refresh assets: npm run ingest && npm run transform:data. Refresh funding flows: npm run ingest:funding-flows && npm run transform:data:funding-flows."
   },
   "NotFound": {
     "title": "Page not found",

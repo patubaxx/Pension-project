@@ -2,9 +2,9 @@
 
 This note plans the **employment pension system funding flows** dataset. It follows the same boundary as the existing assets pipeline: **raw → validation → normalization → processed → view model → UI** (see `docs/data-pipeline.md`).
 
-## Phase 2 status (implemented)
+## Implementation status (Phases 2–3)
 
-The **data pipeline** is implemented in parallel to pension assets (no homepage UI yet):
+**Phase 2 — Data pipeline** (parallel to pension assets):
 
 | Step | Command / module |
 |------|------------------|
@@ -12,9 +12,11 @@ The **data pipeline** is implemented in parallel to pension assets (no homepage 
 | Transform | `npm run transform:data:funding-flows` → `src/data/processed/pension-funding-flows-finland.json` |
 | Constants | `src/lib/data/pensionFundingFlows/sourceConstants.ts` |
 | Raw Zod | `src/lib/data/pensionFundingFlows/rawEtkSchema.ts` |
-| Transform | `src/lib/data/pensionFundingFlows/fromRawEtk.ts` |
+| Raw → processed | `src/lib/data/pensionFundingFlows/fromRawEtk.ts` |
 | Processed Zod | `src/lib/data/pensionFundingFlows/processedSchema.ts` |
-| Runtime load | `loadProcessedPensionFundingFlows()` in `src/lib/data/pensionFundingFlows/loadProcessed.ts` (`server-only`) |
+| Runtime load | `loadProcessedPensionFundingFlows()` in `loadProcessed.ts` (`server-only`) |
+
+**Phase 3 — Homepage:** `loadHomeStoryViewModel` loads both processed files; **`toFundingFlowsViewModels.ts`** builds chart VMs; **`FundingFlowsSection`** on `src/app/[locale]/page.tsx` renders **`FundingFlowsMultiLineChart`** and **`FundingNetCashFlowChart`** (Recharts, client).
 
 **API base (ETK):** machine-readable POST URL is `https://tilastot.etk.fi/api/v1/fi/ETK/180tyoelakkeiden_rahoitus/10rahavirrat/rahavirrat01_kaikki.px` (not the legacy `/PXWeb/api/v1/...` path).
 

@@ -4,7 +4,10 @@ import { Section } from "@/components/primitives/section";
 import { Stack } from "@/components/primitives/stack";
 import { Body, PageTitle, SectionTitle } from "@/components/primitives/typography";
 import type { AppLocale } from "@/lib/i18n/routing";
-import { STATFIN_PENSION_ASSETS } from "@/lib/data";
+import {
+  ETK_PENSION_FUNDING_FLOWS,
+  STATFIN_PENSION_ASSETS,
+} from "@/lib/data";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -54,6 +57,32 @@ export default async function SourcesPage({ params }: PageProps) {
                 rel="noopener noreferrer"
               >
                 {t("statfinDocLabel")}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="border-t border-stone-200 pt-8">
+          <SectionTitle className="text-xl sm:text-2xl">
+            {t("etkHeading")}
+          </SectionTitle>
+          <Body className="mt-3 max-w-2xl">{t("etkBody")}</Body>
+          <ul className="mt-4 list-inside list-disc space-y-2 text-sm text-stone-700">
+            <li>
+              <a
+                href={ETK_PENSION_FUNDING_FLOWS.dataPortalUrl}
+                className="font-medium text-stone-800 underline decoration-stone-300 underline-offset-4 hover:decoration-stone-600 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800"
+                rel="noopener noreferrer"
+              >
+                {t("etkPxLabel")}
+              </a>
+            </li>
+            <li>
+              <a
+                href={ETK_PENSION_FUNDING_FLOWS.documentationUrl}
+                className="font-medium text-stone-800 underline decoration-stone-300 underline-offset-4 hover:decoration-stone-600 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800"
+                rel="noopener noreferrer"
+              >
+                {t("etkDocLabel")}
               </a>
             </li>
           </ul>

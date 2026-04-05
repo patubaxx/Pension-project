@@ -19,8 +19,8 @@ There is **no** `app/page.tsx` at the root without `[locale]`; the locale segmen
 - **Default: Server Components.** Homepage sections (`HeroSection`, `FundingOverviewSection`, etc.) are async server components using `getTranslations`.
 - **Client boundary** is intentionally small:
   - `LocaleSwitcher` — client (pathname + locale switch).
-  - `PensionAssetsLineChart` — client (Recharts).
-- **Processed data** is loaded only on the server via **`import "server-only"`** in `loadProcessedPensionAssets` — a hard signal not to import from client bundles.
+  - **`PensionAssetsLineChart`**, **`FundingFlowsMultiLineChart`**, **`FundingNetCashFlowChart`** — client (Recharts); props-only, no I/O.
+- **Processed data** is loaded only on the server via **`import "server-only"`** in `loadProcessedPensionAssets` and `loadProcessedPensionFundingFlows` — not imported from client bundles.
 
 ## Layering
 
@@ -46,7 +46,7 @@ There is **no** `app/page.tsx` at the root without `[locale]`; the locale segmen
 - **`pensionAssets/fromRawStatfin.ts`** — build processed artifact from raw (used by **transform script**, not at runtime in the browser).
 - **`pensionAssets/rawStatfinSchema.ts`** — raw boundary validation.
 - **`pensionAssets/sourceConstants.ts`** — filenames, PxWeb URLs, human-readable series definition (also used by Sources page links).
-- **`pensionFundingFlows/`** — parallel pipeline for ETK funding flows (raw JSON-stat2, processed annual series, `server-only` loader). Not wired to routes yet; see `docs/data-pipeline.md`.
+- **`pensionFundingFlows/`** — parallel pipeline for ETK funding flows (raw JSON-stat2, processed annual series, `server-only` loader). Consumed on the **homepage** via `loadHomeStoryViewModel`; see `docs/data-pipeline.md`.
 
 ### Formatting (`src/lib/formatting/`)
 
@@ -58,14 +58,14 @@ There is **no** `app/page.tsx` at the root without `[locale]`; the locale segmen
 - **`navigation/`** — `MainNav`, `LocaleSwitcher`.
 - **`primitives/`** — `Section`, `Stack`, typography (`DisplayTitle`, `SectionTitle`, `PageTitle`, etc.).
 
-Charts are **not** under `src/components/charts/`; the pension chart lives under **`src/features/pension/components/charts/`** next to the feature that owns the data shape.
+Charts are **not** under `src/components/charts/`; Recharts live under **`src/features/pension/components/charts/`** next to the feature that owns each data shape.
 
 ## Data flow (runtime)
 
 1. User requests `/en` or `/fi`.
 2. Home `page.tsx` calls **`loadHomeStoryViewModel(locale)`**.
-3. That loads **processed JSON** from disk, validates with Zod, runs **transforms** to view models.
-4. Server components render HTML; the chart subtree hydrates with **pre-shaped points** (no fetch in the chart).
+3. That loads **both** processed pension-assets and funding-flows JSON from disk, validates with Zod, runs **transforms** to view models.
+4. Server sections render HTML; chart subtrees hydrate with **pre-shaped points** (no fetch in the chart).
 
 ## Why this structure
 
@@ -76,7 +76,7 @@ Charts are **not** under `src/components/charts/`; the pension chart lives under
 ## Intentional scope boundaries
 
 - No CMS, auth, or user-generated content in-repo.
-- No generic “dashboard” chart framework — one domain chart, one pipeline.
+- No generic “dashboard” chart framework — a **small set** of purpose-built charts over **parallel** processed datasets (assets + funding flows), not a widget system.
 - Expanding to new datasets should add **parallel** `lib/data/...` modules and feature transforms, not ad hoc logic in `page.tsx`.
 
 ## Related docs
