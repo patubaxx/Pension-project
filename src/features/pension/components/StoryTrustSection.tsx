@@ -12,7 +12,7 @@ export async function StoryTrustSection() {
 
   return (
     <Section
-      className="border-t border-stone-200/70 bg-stone-50/40 pb-20 pt-14 sm:pb-24 sm:pt-16"
+      className="border-t border-stone-200/45 pb-20 pt-14 sm:pb-24 sm:pt-16"
       aria-labelledby={PENSION_ANCHORS.storyTrustHeading}
     >
       <div className="flex flex-col gap-12">

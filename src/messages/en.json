@@ -141,7 +141,7 @@
     "etkDocLabel": "ETK — statistic page"
   },
   "Footer": {
-    "note": "Refresh assets: npm run ingest && npm run transform:data. Refresh funding flows: npm run ingest:funding-flows && npm run transform:data:funding-flows."
+    "note": "Built from processed public pension datasets. See <methodology>Methodology</methodology> and <sources>Sources</sources> for definitions, scope, and dataset context."
   },
   "NotFound": {
     "title": "Page not found",

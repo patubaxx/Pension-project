@@ -7,7 +7,7 @@ export async function MainNav() {
 
   return (
     <nav
-      className="flex flex-wrap items-center justify-between gap-4 border-b border-stone-200/80 py-4"
+      className="flex flex-wrap items-center justify-between gap-4 py-4"
       aria-label={t("ariaLabel")}
     >
       <ul className="flex flex-wrap items-center gap-8 text-sm font-medium text-stone-700">

@@ -50,7 +50,7 @@ export default async function LocaleLayout({
       suppressHydrationWarning
       className={`${sourceSans.variable} ${libreBaskerville.variable} h-full antialiased`}
     >
-      <body className="min-h-full font-sans text-stone-900">
+      <body className="min-h-full bg-stone-50 font-sans text-stone-900">
         <NextIntlClientProvider messages={messages}>
           <SiteShell footer={<SiteFooter />}>{children}</SiteShell>
         </NextIntlClientProvider>

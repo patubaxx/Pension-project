@@ -2,11 +2,11 @@
   "Meta": {
     "siteName": "Pension Project",
     "homeTitle": "Suomen eläkerahoitus",
-    "homeDescription": "Toimituksellinen näkymä Suomen työeläkerahoitukseen: kansantalouden tilinpidon varannot (Tilastokeskus) ja vuotuiset järjestelmävirrat (ETK)—mitä mittarit ovat ja miten niitä kannattaa lukea.",
+    "homeDescription": "Toimituksellinen näkymä Suomen työeläkerahoitukseen: työeläkevarantoja kansantalouden tilinpidosta (Tilastokeskus) ja vuotuisia järjestelmävirtoja (ETK) — mitä mittarit kertovat ja miten niitä kannattaa tulkita.",
     "methodologyTitle": "Menetelmä",
-    "methodologyDescription": "Miten hankimme, validoimme ja esitämme eläkerahoituksen dataa.",
+    "methodologyDescription": "Miten hankimme, tarkistamme ja esitämme eläkerahoituksen aineistoja.",
     "sourcesTitle": "Lähteet",
-    "sourcesDescription": "Tarinan ensisijaiset viitteet ja aineistot."
+    "sourcesDescription": "Tarinan keskeiset viitteet ja aineistot."
   },
   "Nav": {
     "ariaLabel": "Päänavigaatio",
@@ -19,45 +19,45 @@
   },
   "PensionHome": {
     "hero": {
-      "kicker": "Toimituksellinen data-tarina · Suomi",
+      "kicker": "Toimituksellinen tietotarina · Suomi",
       "title": "Miten Suomen eläkejärjestelmää rahoitetaan",
-      "lead": "Tällä sivulla seurataan yhtä virallista kansantalouden tilinpidon sarjaa: työeläkelaitosten taseen rahoitusvarantoa.",
-      "framing": "Kyseessä on tase-näkökulma rahoituskapasiteettiin—ei kuva etuuksista, maksuista tai yksilöoikeuksista, eikä ennuste.",
+      "lead": "Tällä sivulla seurataan yhtä virallista kansantalouden tilinpidon sarjaa: työeläkelaitosten taseeseen kirjattuja rahoitusvarantoja.",
+      "framing": "Näkökulma on taseessa näkyvässä rahoituskyvyssä — ei kuva etuuksista, maksuista tai yksilöllisistä oikeuksista, eikä ennuste.",
       "statLabel": "Viimeisin havainto",
-      "statContext": "Vuoden lopun varastosaldo, {year}",
+      "statContext": "Vuoden lopun varantosaldo, {year}",
       "sourceLine": "Tilastokeskus · kansantalouden tilinpito (RTP), sektori S13141"
     },
     "sections": {
       "fundingOverview": {
         "title": "Miksi tämä mittari on tärkeä",
         "lead": "Lakisääteinen työeläkejärjestelmä nojaa osin sijoitettuihin varantoihin. Kansantalouden tilinpidossa ne näkyvät työeläkelaitosten taseen rahoitusvaroina.",
-        "interpretation": "Varannon koko kertoo, kuinka suureksi kirjattu sijoituspuskuri on kasvanut vuosien varrella. Mittari vastaa suppeaan mutta selkeään kysymykseen: kuinka suuri tämä kirjattu varanto on vuosi vuodelta?",
-        "bridge": "Sarja kattaa vuodet {firstYear}–{latestYear}; alla oleva käyrä näyttää jokaisen vuoden prosessoidusta otteesta.",
-        "attribution": "Lähde: Tilastokeskus, kansantalouden tilinpito (RTP), sektori S13141 työeläkelaitokset, instrumentti rahoitusvarat yhteensä (F0), miljoonaa euroa, vuoden lopun varastosaldot."
+        "interpretation": "Varannon koko kertoo, kuinka suureksi kirjattu sijoituspuskuri on kasvanut vuosien varrella. Mittari vastaa suppeaan mutta selkeään kysymykseen: kuinka suuri tämä kirjattu varanto on vuodesta toiseen?",
+        "bridge": "Sarja ulottuu vuodesta {firstYear} vuoteen {latestYear}; alla oleva käyrä näyttää prosessoidun otteen jokaisen vuoden.",
+        "attribution": "Lähde: Tilastokeskus, kansantalouden tilinpito (RTP), sektori S13141 työeläkelaitokset, instrumentti rahoitusvarat yhteensä (F0), miljoonaa euroa, vuoden lopun varantosaldot."
       },
       "signatureViz": {
         "timeRangeKicker": "{from}–{to}",
         "title": "Tunnusomainen sarja",
         "seriesLabel": "Työeläkelaitokset — rahoitusvarat yhteensä (kansantalouden tilinpito)",
         "deck": "Jokainen piste on vuoden lopun kokonaissaldo miljardeina euroina täsmälleen samalle sektorille ja instrumentille kuin kansantalouden tilinpidossa julkaistaan.",
-        "takeaway": "Näet pitkän jakson kertyneistä rahoitusvaroista yhden instituution taseessa—et vuotuisia kassavirtoja tai koko eläkejärjestelmän taloudellista jalanjälkeä.",
+        "takeaway": "Näet pitkän kaaren kertyneistä rahoitusvaroista yhden instituution taseessa — et vuotuisia kassavirtoja eikä koko eläkejärjestelmän taloudellista jalanjälkeä.",
         "ariaLabel": "Käyrä työeläkelaitosten rahoitusvaroista vuosina {from}–{to}.",
-        "ariaLabelEmpty": "Kaavioalue: sarjadatoja ei ole saatavilla.",
+        "ariaLabelEmpty": "Kaavioalue: sarjatietoja ei ole saatavilla.",
         "chartYear": "Vuosi",
         "tooltipSeriesLabel": "Sarja",
         "tooltipValueLabel": "Saldo",
         "lineName": "Rahoitusvarat yhteensä, työeläkelaitokset",
         "axisBillionsEur": "mrd €",
         "readThisTitle": "Miten viivaa luetaan",
-        "readThisBody": "Vertaa käyrän korkeutta vuosien välillä: korkeampi tarkoittaa suurempaa kirjattua varantoa vuoden lopussa. Katkoviiva merkitsee viimeisintä vuotta tässä otteessa—ankkuri, ei ennuste.",
-        "sourceNote": "Data: Tilastokeskus (RTP / 11qp), sektori S13141, instrumentti F0. Lukuja voidaan korjata menetelmä- ja lähdemuutosten myötä.",
+        "readThisBody": "Vertaa käyrän korkeutta vuosien välillä: korkeampi tarkoittaa suurempaa kirjattua varantoa vuoden lopussa. Katkoviiva merkitsee viimeisintä vuotta tässä otteessa — ankkuri, ei ennuste.",
+        "sourceNote": "Aineisto: Tilastokeskus (RTP / 11qp), sektori S13141, instrumentti F0. Lukuja voidaan korjata menetelmä- ja lähdemuutosten myötä.",
         "caption": "Kansantalouden tilinpitoa tarkistetaan ajan myötä; uusin vuosi voi olla alustava. Akseleita on tiivistetty luettavuuden vuoksi; työkaluvihje näyttää yhden desimaalin.",
         "emptyState": "Tälle näkymälle ei ole kaaviodataa."
       },
       "fundingFlows": {
         "timeRangeKicker": "{from}–{to}",
         "title": "Työeläkejärjestelmän vuotuiset rahavirrat",
-        "intro": "Eläketurvakeskus (ETK) julkaisee vuosittaiset eläkelaitosten tilinpäätöksiin perustuvat rahavirrat: vakuutusmaksut, maksetut eläkkeet ja sijoitustulos. Tämä täydentää yllä olevaa RTP-varastokäyrää; eroista ja suppeasta netosta kerrotaan alla olevassa huomautuksessa.",
+        "intro": "Eläketurvakeskus (ETK) julkaisee vuosittain eläkelaitosten tilinpäätöksiin perustuvia rahavirtoja: vakuutusmaksut, maksetut eläkkeet ja sijoitustulos. Ne täydentävät yllä olevaa RTP-varantokäyrää; eroista ja suppeasta nettomäärästä kerrotaan kaavioiden alla olevassa huomautuksessa.",
         "chartA": {
           "caption": "Kolme käyrää, sama asteikko: kuinka suuria ovat maksutulo, sijoitustulos ja etuusmenot kullekin vuodelle?",
           "ariaLabel": "Moniviivakaavio vuosittaisista maksutuloista, sijoitustuloksesta ja eläkemenosta vuosina {from}–{to}.",
@@ -68,34 +68,34 @@
           "legendExpenditure": "Maksetut eläkkeet",
           "tooltipYear": "Vuosi",
           "readTitle": "Miten viivoja luetaan",
-          "readBody": "Korkeampi maksutulo tarkoittaa enemmän kerättyjä maksuja kyseisenä vuonna. Sijoitustulos voi olla negatiivinen markkinavuosina. Maksetut eläkkeet on esitetty suuruutena (miljardeina ulos)—vertaa kolmea nähdäksesi, mikä komponentti liikkui eniten.",
+          "readBody": "Korkeampi maksutulo tarkoittaa enemmän kerättyjä maksuja kyseisenä vuonna. Sijoitustulos voi olla negatiivinen heikkoina markkinavuosina. Maksetut eläkkeet on esitetty suuruutena (miljardeina ulos) — vertaa kolmea nähdäksesi, mikä komponentti liikkui eniten.",
           "emptyState": "Virtasarjoja ei ole saatavilla tälle näkymälle."
         },
         "chartB": {
           "caption": "Suppea vuositasapaino: maksutulo plus sijoitustulos, vähennettynä maksetuilla eläkkeillä",
           "ariaLabel": "Pylväskaavio johdetusta vuosittaisesta nettovirrasta vuosina {from}–{to}; nollan yläpuolella positiiviset vuodet, alapuolella negatiiviset.",
-          "ariaLabelEmpty": "Kaavioalue: nettivirtatietoja ei ole saatavilla.",
+          "ariaLabelEmpty": "Kaavioalue: nettovirtatietoja ei ole saatavilla.",
           "axisBillionsEur": "mrd €",
           "tooltipYear": "Vuosi",
           "tooltipNetLabel": "Suppea netto (johdettu)",
           "legendPositive": "Vuosi, jona suppea netto on positiivinen",
           "legendNegative": "Vuosi, jona suppea netto on negatiivinen",
           "readTitle": "Mitä tämä netto tarkoittaa (ja mitä ei)",
-          "readBody": "Sama kaava kuin prosessoidussa tiedostossa: maksutulo plus sijoitustulos vähennettynä maksetuilla eläkkeillä; muut ETK-rivit jätetty pois. Suuntaa antava tulkinta—rajaukset alla olevassa huomautuksessa.",
-          "emptyState": "Nettivirtasarjaa ei ole saatavilla tälle näkymälle."
+          "readBody": "Sama kaava kuin prosessoidussa tiedostossa: maksutulo plus sijoitustulos, vähennettynä maksetuilla eläkkeillä; muut ETK-rivit on jätetty pois. Antaa suuntaa — tarkemmat rajaukset alla olevassa huomautuksessa.",
+          "emptyState": "Nettovirtasarjaa ei ole saatavilla tälle näkymälle."
         },
         "caveatTitle": "Tärkeitä rajauksia",
-        "caveatBody": "ETK-luvut perustuvat eläkelaitosten tilinpäätöksiin ja eroavat Tilastokeskuksen RTP-sektorin S13141 varastosaldoista, joita tunnusomainen käyrä käyttää. Suppea netto ei kuvaa maksukykyä. Viimeisimmät vuodet voivat tarkentua tilinpäätösten valmistuessa.",
+        "caveatBody": "ETK-luvut perustuvat eläkelaitosten tilinpäätöksiin ja poikkeavat Tilastokeskuksen RTP-sektorin S13141 varantosaldoista, joita tunnusomainen käyrä käyttää. Suppea netto ei kuvaa maksukykyä. Viimeisimpiä vuosia voidaan vielä tarkentaa tilinpäätösten valmistuessa.",
         "sourceNote": "Virrat: ETK tilastotietokanta, rahavirrat01_kaikki (laitokset yhteensä). Työkaluvihje näyttää yhden desimaalin; akseleita on tiivistetty."
       },
       "keyMetrics": {
-        "title": "Tukeva konteksti",
-        "lead": "Kolme viitekohtaa tiivistää saman prosessoidun sarjan. Ne ovat kuvailevia, ei ohjeellisia—hyödyllisiä vierekkäin käyrän kanssa.",
+        "title": "Lukemia taustaksi",
+        "lead": "Kolme viitearvoa tiivistää samaa prosessoitua sarjaa. Ne ovat kuvailevia, eivät ohjeita — hyödyllisiä rinnalla käyrän kanssa.",
         "howToReadLabel": "Näin näitä lukuja kannattaa lukea",
         "howToReadAria": "Ohje tukilukujen tulkintaan",
-        "howToReadBody": "Kaikki arvot ovat varastosaldoja samasta kansantalouden tilinpidon otteesta. Kasvu vertaa viimeisintä vuotta sarjan ensimmäiseen vuoteen; se ei annualisoi tuottoja eikä erottele arvostusvaikutuksia.",
+        "howToReadBody": "Kaikki arvot ovat varantosaldoja samasta kansantalouden tilinpidon otteesta. Kasvu vertaa viimeisintä vuotta sarjan ensimmäiseen vuoteen; se ei annualisoi tuottoja eikä erottele arvostusvaikutuksia.",
         "latestLabel": "Viimeisin vuoden loppu",
-        "latestYearNote": "Varastosaldo, {year}",
+        "latestYearNote": "Varantosaldo, {year}",
         "growthLabel": "Muutos vuodesta {year}",
         "growthHint": "Suhteessa sarjan ensimmäiseen vuoteen (kokonaissaldojen suhde).",
         "spanLabel": "Sarjan pituus",
@@ -105,26 +105,26 @@
       },
       "storyTrust": {
         "title": "Menetelmä ja lähteet",
-        "intro": "Tavoite on läpinäkyvyys: raakasyötteet eroteltu siitä, mitä ruudulla näkyy, ja viitteet helposti tarkistettavissa.",
+        "intro": "Tavoitteena on läpinäkyvyys: raakasyötteet eroteltu siitä, mitä ruudulla näkyy, ja viitteet helposti tarkistettavissa.",
         "methodologyTitle": "Menetelmä",
-        "methodologyBody": "Dokumentoimme noston, validoinnin, normalisoinnin ja muunnokset, jotka tekevät prosessoidusta JSONista kaaviovalmiit näkymämallit—jotta tarina pysyy tarkistettavissa.",
+        "methodologyBody": "Kuvaamme noston, tarkistuksen, normalisoinnin ja muunnokset, joilla prosessoidusta JSONista tulee kaaviovalmiit näkymämallit — jotta tarina pysyy jäljitettävissä.",
         "methodologyCta": "Lue menetelmä",
         "sourcesTitle": "Lähteet",
-        "sourcesBody": "Tarina käyttää kahta otetta: Tilastokeskuksen RTP (11qp, sektori S13141, instrumentti F0) varastokäyrään ja ETK:n rahavirrat01_kaikki -taulukkoa vuosivirtoihin ja johdettuun suppeaan nettoon. Linkit ja lyhyet kuvaukset ovat lähteet-sivulla.",
+        "sourcesBody": "Tarina nojaa kahteen otteeseen: Tilastokeskuksen RTP-taulukkoon (11qp, sektori S13141, instrumentti F0) varantokäyrään ja ETK:n rahavirrat01_kaikki -aineistoon vuosivirtoihin ja johdettuun suppeaan nettoon. Linkit ja lyhyet kuvaukset ovat lähteet-sivulla.",
         "sourcesCta": "Näytä lähteet"
       }
     }
   },
   "MethodologyPage": {
     "title": "Menetelmä",
-    "intro": "Sivusto käyttää toistettavaa polkua: virallinen PxWeb-vastaus tallennetaan raakana, validoidaan, normalisoidaan prosessoiduksi JSON-tiedostoksi ja muunnetaan näkymä- ja kaaviomalleiksi. Laajempi menetelmäteksti voidaan lisätä myöhemmin.",
-    "datasetsNote": "Etusivun tarina yhdistää kaksi prosessoitua otetta: Tilastokeskuksen RTP (11qp, sektori S13141, instrumentti F0) vuoden lopun varastokäyrään ja ETK:n rahavirrat01_kaikki -taulukon vuosivirtoihin. Pylväskaavion netto on suppea johdettu luku ETK-aineistosta (maksutulo plus sijoitustulos vähennettynä maksetuilla eläkkeillä, muut rivit pois); se ei ole maksukykyä kuvaava mittari, eikä ETK-virrat ole vaihdettavissa RTP-varastosaldojen kanssa.",
+    "intro": "Sivusto käyttää toistettavaa ketjua: virallinen PxWeb-vastaus tallennetaan raakana, tarkistetaan, normalisoidaan prosessoiduksi JSON-tiedostoksi ja muunnetaan näkymä- ja kaaviomalleiksi. Laajempaa menetelmätekstiä voidaan lisätä myöhemmin.",
+    "datasetsNote": "Etusivun tarina yhdistää kaksi prosessoitua otetta: Tilastokeskuksen RTP (11qp, sektori S13141, instrumentti F0) vuoden lopun varantokäyrään ja ETK:n rahavirrat01_kaikki -aineiston vuosivirtoihin. Pylväskaavion netto on suppea johdettu luku ETK-aineistosta (maksutulo plus sijoitustulos, vähennettynä maksetuilla eläkkeillä; muut rivit pois); se ei kuvaa maksukykyä, eikä ETK-virtoja voi vaihtaa RTP-varantosaldoihin.",
     "listTitle": "Datakerrokset",
     "layers": {
-      "raw": "Raw — PxWeb JSON-stat sellaisenaan",
-      "validate": "Validointi — Zod-skeemat raa’alle ja prosessoidulle muodolle",
-      "normalize": "Normalisointi — vuosittainen sarja miljoonina euroina",
-      "processed": "Prosessoitu — versionitu JSON, jota sovellus lukee",
+      "raw": "Raaka — PxWeb JSON-stat sellaisenaan tallennettuna",
+      "validate": "Tarkistus — Zod-skeemat raa’alle ja käsitellylle muodolle",
+      "normalize": "Normalisointi — järjestetty vuosisarja miljoonina euroina",
+      "processed": "Käsitelty — versionitu JSON, jota sovellus lukee",
       "transform": "Muunnos — näkymämallit osioille ja kaavioille"
     }
   },
@@ -132,20 +132,20 @@
     "title": "Lähteet",
     "intro": "Etusivun tarinassa käytetyt aineistot:",
     "statfinHeading": "Kansantalouden tilinpito — työeläkevarat",
-    "statfinBody": "Tilastokeskuksen taulukko 11qp (rahoitusvarat ja -velat, vuosi). Sarake: sektori S13141 työeläkelaitokset, instrumentti F0 rahoitusvarat yhteensä, varastosaldot miljoonina euroina. Käytössä tunnusomaisessa varastokäyrässä ja tukiluvuissa.",
+    "statfinBody": "Tilastokeskuksen taulukko 11qp (rahoitusvarat ja -velat, vuosi). Sarja: sektori S13141 työeläkelaitokset, instrumentti F0 rahoitusvarat yhteensä, varantosaldot miljoonina euroina. Käytössä tunnusomaisessa varantokäyrässä ja taustaluvuissa.",
     "statfinPxLabel": "PxWeb-taulukko (StatFin)",
     "statfinDocLabel": "RTP-dokumentaatio",
     "etkHeading": "ETK — työeläkkeiden rahavirrat",
-    "etkBody": "ETK:n PxWeb-taulukko rahavirrat01_kaikki (työeläkejärjestelmän eläkevarat ja rahavirrat, milj. euroa): vuosittaiset rahavirtarivit valvottujen eläkelaitosten tilinpäätöksistä, laitokset yhteensä (koodi 399). Käytössä virtakäyrissä ja johdetussa suppean neton pylväskaaviossa—ei sama sarja kuin RTP-varasto yllä.",
+    "etkBody": "ETK:n PxWeb-taulukko rahavirrat01_kaikki (työeläkejärjestelmän eläkevarat ja rahavirrat, milj. euroa): vuosittaiset rahavirtarivit valvottujen eläkelaitosten tilinpäätöksistä, laitokset yhteensä (koodi 399). Käytössä virtakäyrissä ja johdetussa suppean neton pylväskaaviossa — ei sama sarja kuin RTP-varanto yllä.",
     "etkPxLabel": "PxWeb-taulukko (ETK)",
     "etkDocLabel": "ETK — tilaston kuvaus"
   },
   "Footer": {
-    "note": "Varannot: npm run ingest && npm run transform:data. Rahavirrat: npm run ingest:funding-flows && npm run transform:data:funding-flows."
+    "note": "Tämän sivuston luvut perustuvat käsiteltyyn julkiseen eläkeaineistoon. <methodology>Menetelmä</methodology>- ja <sources>Lähteet</sources>-sivuilta löydät rajaukset, määritelmät ja aineistojen taustan."
   },
   "NotFound": {
     "title": "Sivua ei löytynyt",
-    "body": "Pyytämääsi sivua ei ole tai se on siirretty.",
+    "body": "Etsimääsi sivua ei löydy tai osoite on vanhentunut.",
     "cta": "Takaisin tarinaan"
   }
 }

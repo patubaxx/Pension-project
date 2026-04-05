@@ -16,7 +16,7 @@ export function LocaleSwitcher() {
           key={loc}
           href={pathname}
           locale={loc}
-          className={`rounded px-2 py-1 transition-colors hover:bg-stone-100 hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800 ${
+          className={`rounded px-2 py-1 transition-colors hover:bg-stone-200/40 hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800 ${
             loc === current ? "font-medium text-stone-900" : ""
           }`}
         >

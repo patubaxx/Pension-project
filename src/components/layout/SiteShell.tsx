@@ -8,13 +8,19 @@ type SiteShellProps = {
 
 export function SiteShell({ children, footer }: SiteShellProps) {
   return (
-    <div className="flex min-h-full flex-col bg-stone-50">
-      <header className="mx-auto w-full max-w-3xl px-6 sm:px-8">
-        <MainNav />
+    <div className="flex min-h-full flex-col bg-gradient-to-b from-stone-50 via-[#e9f1ee] to-[#f2f4f3]">
+      <header className="w-full border-b border-stone-300/45 bg-white/60">
+        <div className="mx-auto max-w-3xl px-6 sm:px-8">
+          <MainNav />
+        </div>
       </header>
-      <main className="flex-1">{children}</main>
-      <footer className="border-t border-stone-200/80 bg-white/60">
-        <div className="mx-auto max-w-3xl px-6 py-10 sm:px-8">{footer}</div>
+      <main className="flex w-full flex-1 justify-center">
+        <div className="w-full max-w-3xl flex-1 bg-white/38">{children}</div>
+      </main>
+      <footer className="w-full border-t border-stone-300/45 bg-white/60">
+        <div className="mx-auto max-w-3xl px-6 py-8 sm:px-8 sm:py-10">
+          {footer}
+        </div>
       </footer>
     </div>
   );

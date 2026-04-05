@@ -55,7 +55,7 @@ export async function PensionAssetsSignatureSection({
 
         {hasData ? (
           <>
-            <figure className="rounded-lg border border-stone-200/80 bg-white p-4 shadow-sm shadow-stone-900/5 sm:p-6">
+            <figure className="rounded-lg border border-stone-200/65 bg-white/80 p-4 sm:p-6">
               <PensionAssetsLineChart
                 points={chart.points}
                 locale={locale}
@@ -68,7 +68,7 @@ export async function PensionAssetsSignatureSection({
                 lineName={t("lineName")}
               />
             </figure>
-            <div className="flex flex-col gap-3 border-l border-stone-300/90 bg-stone-100/50 py-3 pl-5 pr-4 text-sm leading-relaxed text-stone-700">
+            <div className="flex flex-col gap-3 border-l border-stone-300/70 bg-stone-100/35 py-3 pl-5 pr-4 text-sm leading-relaxed text-stone-700">
               <p className="font-medium text-stone-800">{t("readThisTitle")}</p>
               <p>{t("readThisBody")}</p>
             </div>

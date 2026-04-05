@@ -54,7 +54,7 @@ export async function FundingFlowsSection({
 
         {hasFlows ? (
           <>
-            <figure className="rounded-lg border border-stone-200/80 bg-white p-4 shadow-sm shadow-stone-900/5 sm:p-6">
+            <figure className="rounded-lg border border-stone-200/65 bg-white/80 p-4 sm:p-6">
               <p className="mb-4 font-serif text-base text-stone-800 sm:text-lg">
                 {t("chartA.caption")}
               </p>
@@ -69,7 +69,7 @@ export async function FundingFlowsSection({
                 tooltipYearLabel={t("chartA.tooltipYear")}
               />
             </figure>
-            <div className="flex flex-col gap-3 border-l border-stone-300/90 bg-stone-100/50 py-3 pl-5 pr-4 text-sm leading-relaxed text-stone-700">
+            <div className="flex flex-col gap-3 border-l border-stone-300/70 bg-stone-100/35 py-3 pl-5 pr-4 text-sm leading-relaxed text-stone-700">
               <p className="font-medium text-stone-800">{t("chartA.readTitle")}</p>
               <p>{t("chartA.readBody")}</p>
             </div>
@@ -85,7 +85,7 @@ export async function FundingFlowsSection({
 
         {hasBalance ? (
           <>
-            <figure className="rounded-lg border border-stone-200/80 bg-white p-4 shadow-sm shadow-stone-900/5 sm:p-6">
+            <figure className="rounded-lg border border-stone-200/65 bg-white/80 p-4 sm:p-6">
               <p className="mb-4 font-serif text-base text-stone-800 sm:text-lg">
                 {t("chartB.caption")}
               </p>
@@ -116,7 +116,7 @@ export async function FundingFlowsSection({
                 </span>
               </p>
             </figure>
-            <div className="flex flex-col gap-3 border-l border-stone-300/90 bg-stone-100/50 py-3 pl-5 pr-4 text-sm leading-relaxed text-stone-700">
+            <div className="flex flex-col gap-3 border-l border-stone-300/70 bg-stone-100/35 py-3 pl-5 pr-4 text-sm leading-relaxed text-stone-700">
               <p className="font-medium text-stone-800">{t("chartB.readTitle")}</p>
               <p>{t("chartB.readBody")}</p>
             </div>
@@ -130,7 +130,7 @@ export async function FundingFlowsSection({
           </p>
         )}
 
-        <div className="max-w-2xl rounded-md border border-stone-200 bg-stone-50/80 px-4 py-4 text-sm leading-relaxed text-stone-700">
+        <div className="max-w-2xl rounded-md border border-stone-200/55 bg-stone-50/45 px-4 py-4 text-sm leading-relaxed text-stone-700">
           <p className="font-medium text-stone-800">{t("caveatTitle")}</p>
           <p className="mt-2">{t("caveatBody")}</p>
         </div>
