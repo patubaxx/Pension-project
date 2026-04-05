@@ -34,7 +34,7 @@ There is **no** `app/page.tsx` at the root without `[locale]`; the locale segmen
 
 | Area | Responsibility |
 |------|----------------|
-| `content/home.ts` | Server-only entry: load processed file, return **`HomeStoryViewModel`** |
+| `content/home.ts` | Server-only entry: load processed pension assets + funding flows, return **`HomeStoryViewModel`** |
 | `transforms/` | Pure functions: processed file → section/chart view models |
 | `model/types.ts` | Serializable view-model types (chart points, metrics, etc.) |
 | `components/` | Section UI; chart wrapper imports client chart |
@@ -46,6 +46,7 @@ There is **no** `app/page.tsx` at the root without `[locale]`; the locale segmen
 - **`pensionAssets/fromRawStatfin.ts`** — build processed artifact from raw (used by **transform script**, not at runtime in the browser).
 - **`pensionAssets/rawStatfinSchema.ts`** — raw boundary validation.
 - **`pensionAssets/sourceConstants.ts`** — filenames, PxWeb URLs, human-readable series definition (also used by Sources page links).
+- **`pensionFundingFlows/`** — parallel pipeline for ETK funding flows (raw JSON-stat2, processed annual series, `server-only` loader). Not wired to routes yet; see `docs/data-pipeline.md`.
 
 ### Formatting (`src/lib/formatting/`)
 

@@ -28,8 +28,37 @@ export type KeyMetricsViewModel = {
   yearCount: number;
 };
 
+/** Chart A — three annual flow components (billion EUR), ETK insurer reporting basis. */
+export type FundingFlowsChartPoint = {
+  year: number;
+  contributionsBillionEur: number;
+  investmentReturnsBillionEur: number;
+  pensionExpenditureBillionEur: number;
+};
+
+export type FundingFlowsChartViewModel = {
+  points: FundingFlowsChartPoint[];
+  retrievedAt: string;
+};
+
+/** Chart B — narrow derived narrative net (billion EUR); see processed `netCashFlowDefinition`. */
+export type FundingBalanceChartPoint = {
+  year: number;
+  netCashFlowBillionEur: number;
+};
+
+export type FundingBalanceChartViewModel = {
+  points: FundingBalanceChartPoint[];
+};
+
+export type FundingFlowsSectionViewModel = {
+  flowsChart: FundingFlowsChartViewModel;
+  balanceChart: FundingBalanceChartViewModel;
+};
+
 export type HomeStoryViewModel = {
   fundingOverview: FundingOverviewViewModel;
   signatureChart: SignatureChartViewModel;
+  fundingFlows: FundingFlowsSectionViewModel;
   keyMetrics: KeyMetricsViewModel;
 };

@@ -2,6 +2,7 @@
 export const PENSION_ANCHORS = {
   fundingOverview: "funding-overview",
   signatureViz: "signature-visualization",
+  fundingFlows: "funding-flows",
   keyMetrics: "key-metrics",
   storyTrustHeading: "story-trust-heading",
   methodologyPreview: "methodology-preview",

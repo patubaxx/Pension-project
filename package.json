@@ -12,7 +12,9 @@
     "lint": "eslint",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,mjs,css,json}\"",
     "ingest": "node src/scripts/ingest/fetch-pension-assets.mjs",
-    "transform:data": "tsx src/scripts/transform/build-processed.ts"
+    "ingest:funding-flows": "node src/scripts/ingest/fetch-pension-funding-flows.mjs",
+    "transform:data": "tsx src/scripts/transform/build-processed.ts",
+    "transform:data:funding-flows": "tsx src/scripts/transform/build-pension-funding-flows.ts"
   },
   "dependencies": {
     "next": "16.2.2",

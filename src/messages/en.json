@@ -54,6 +54,40 @@
         "caption": "National accounts are revised over time; the most recent year may be provisional. Axis labels are shortened for legibility; tooltips show one decimal.",
         "emptyState": "No chart data is available for this view."
       },
+      "fundingFlows": {
+        "timeRangeKicker": "{from}–{to}",
+        "title": "Annual flows in the earnings-related system",
+        "intro": "Alongside the national-accounts asset stock, Eläketurvakeskus (ETK) publishes annual money-flow lines from supervised insurers: premiums collected, pensions paid out, and the investment result. These are institutional cash-flow concepts—not the same as the RTP balance-sheet total above, and not a verdict on solvency.",
+        "chartA": {
+          "caption": "Three lines, same scale: how large are premiums, investment results, and benefit outlays each year?",
+          "ariaLabel": "Multi-line chart of annual premiums, investment result, and pension outlays from {from} to {to}.",
+          "ariaLabelEmpty": "Chart area: no annual flow data available.",
+          "axisBillionsEur": "bn EUR",
+          "legendContributions": "Premiums (contributions)",
+          "legendInvestment": "Investment result",
+          "legendExpenditure": "Pensions paid",
+          "tooltipYear": "Year",
+          "readTitle": "How to read these lines",
+          "readBody": "Higher premiums mean more contribution income in that year. Investment result can be negative when markets fall. Pensions paid are shown as a magnitude (billions out the door)—compare the three to see which components moved most in a given year.",
+          "emptyState": "No flow series is available for this view."
+        },
+        "chartB": {
+          "caption": "A narrow annual balance: premiums plus investment result, minus pensions paid",
+          "ariaLabel": "Bar chart of derived annual net flow from {from} to {to}; bars above zero are positive years, below zero negative.",
+          "ariaLabelEmpty": "Chart area: no net flow data available.",
+          "axisBillionsEur": "bn EUR",
+          "tooltipYear": "Year",
+          "tooltipNetLabel": "Narrow net (derived)",
+          "legendPositive": "Year with positive narrow net",
+          "legendNegative": "Year with negative narrow net",
+          "readTitle": "What this net does (and does not) mean",
+          "readBody": "This is exactly the processed definition: contributions plus investment result minus pensions paid. It ignores other ETK lines (state shares, operating costs, taxes, transfers, etc.). It is a simple orientation aid—not full funding health and not actuarial balance.",
+          "emptyState": "No net flow series is available for this view."
+        },
+        "caveatTitle": "Important distinctions",
+        "caveatBody": "ETK flow and asset figures follow insurer reporting and differ from Statistics Finland RTP sector S13141 stock totals used in the chart above. The narrow net here is not a solvency measure. Latest years may be revised when final financial statements are incorporated.",
+        "sourceNote": "Flows: ETK tilastotietokanta, rahavirrat01_kaikki (institutions combined). Tooltips use one decimal; axis labels are shortened."
+      },
       "keyMetrics": {
         "title": "Supporting context",
         "lead": "Three reference points summarize the same processed series. They are descriptive, not prescriptive—useful for orientation alongside the line chart.",

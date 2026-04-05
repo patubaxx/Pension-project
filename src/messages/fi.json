@@ -54,6 +54,40 @@
         "caption": "Kansantalouden tilinpitoa tarkistetaan ajan myötä; uusin vuosi voi olla alustava. Akseleita on tiivistetty luettavuuden vuoksi; työkaluvihje näyttää yhden desimaalin.",
         "emptyState": "Tälle näkymälle ei ole kaaviodataa."
       },
+      "fundingFlows": {
+        "timeRangeKicker": "{from}–{to}",
+        "title": "Työeläkejärjestelmän vuotuiset rahavirrat",
+        "intro": "Kansantalouden tilinpidon varastosarjan rinnalla Eläketurvakeskus (ETK) julkaisee vuosittaiset rahavirtarivit valvottujen eläkelaitosten tilinpäätöksistä: kerätyt vakuutusmaksut, maksetut eläkkeet ja sijoitustulos. Kyseessä on instituutioiden kassavirtanäkökulma—ei sama kuin RTP-taseen kokonaisvarasto yllä, eikä maksukykyarvio.",
+        "chartA": {
+          "caption": "Kolme käyrää, sama asteikko: kuinka suuria ovat maksutulo, sijoitustulos ja etuusmenot kullekin vuodelle?",
+          "ariaLabel": "Moniviivakaavio vuosittaisista maksutuloista, sijoitustuloksesta ja eläkemenosta vuosina {from}–{to}.",
+          "ariaLabelEmpty": "Kaavioalue: vuosivirtatietoja ei ole saatavilla.",
+          "axisBillionsEur": "mrd €",
+          "legendContributions": "Vakuutusmaksut (maksutulo)",
+          "legendInvestment": "Sijoitustulos",
+          "legendExpenditure": "Maksetut eläkkeet",
+          "tooltipYear": "Vuosi",
+          "readTitle": "Miten viivoja luetaan",
+          "readBody": "Korkeampi maksutulo tarkoittaa enemmän kerättyjä maksuja kyseisenä vuonna. Sijoitustulos voi olla negatiivinen markkinavuosina. Maksetut eläkkeet on esitetty suuruutena (miljardeina ulos)—vertaa kolmea nähdäksesi, mikä komponentti liikkui eniten.",
+          "emptyState": "Virtasarjoja ei ole saatavilla tälle näkymälle."
+        },
+        "chartB": {
+          "caption": "Suppea vuositasapaino: maksutulo plus sijoitustulos, vähennettynä maksetuilla eläkkeillä",
+          "ariaLabel": "Pylväskaavio johdetusta vuosittaisesta nettovirrasta vuosina {from}–{to}; nollan yläpuolella positiiviset vuodet, alapuolella negatiiviset.",
+          "ariaLabelEmpty": "Kaavioalue: nettivirtatietoja ei ole saatavilla.",
+          "axisBillionsEur": "mrd €",
+          "tooltipYear": "Vuosi",
+          "tooltipNetLabel": "Suppea netto (johdettu)",
+          "legendPositive": "Vuosi, jona suppea netto on positiivinen",
+          "legendNegative": "Vuosi, jona suppea netto on negatiivinen",
+          "readTitle": "Mitä tämä netto tarkoittaa (ja mitä ei)",
+          "readBody": "Tämä vastaa prosessoidun tiedoston määritelmää: maksutulo plus sijoitustulos vähennettynä maksetuilla eläkkeillä. Muut ETK-rivit (valtion osuudet, liikekulut, verot, siirrot jne.) on jätetty pois. Tämä on kevyt tulkintatyökalu—ei täydellinen rahoituksen kuva eikä aktuaarinen tasapaino.",
+          "emptyState": "Nettivirtasarjaa ei ole saatavilla tälle näkymälle."
+        },
+        "caveatTitle": "Tärkeitä rajauksia",
+        "caveatBody": "ETK:n rahavirrat ja varat perustuvat eläkelaitosten tilinpäätöksiin ja eroavat Tilastokeskuksen RTP-sektorin S13141 varastosaldoista, joita yllä oleva käyrä käyttää. Suppea netto ei kuvaa maksukykyä. Viimeisimmät vuodet voivat tarkentua, kun lopulliset tilinpäätökset kootaan.",
+        "sourceNote": "Virrat: ETK tilastotietokanta, rahavirrat01_kaikki (laitokset yhteensä). Työkaluvihje näyttää yhden desimaalin; akseleita on tiivistetty."
+      },
       "keyMetrics": {
         "title": "Tukeva konteksti",
         "lead": "Kolme viitekohtaa tiivistää saman prosessoidun sarjan. Ne ovat kuvailevia, ei ohjeellisia—hyödyllisiä vierekkäin käyrän kanssa.",
