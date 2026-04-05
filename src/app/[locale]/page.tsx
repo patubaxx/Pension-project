@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { FundingFlowsSection } from "@/features/pension/components/FundingFlowsSection";
 import { FundingOverviewSection } from "@/features/pension/components/FundingOverviewSection";
 import { HeroSection } from "@/features/pension/components/HeroSection";
 import { PensionAssetsSignatureSection } from "@/features/pension/components/PensionAssetsSignatureSection";
@@ -35,6 +36,10 @@ export default async function HomePage({ params }: PageProps) {
       <FundingOverviewSection viewModel={viewModel.fundingOverview} />
       <PensionAssetsSignatureSection
         chart={viewModel.signatureChart}
+        locale={locale as AppLocale}
+      />
+      <FundingFlowsSection
+        viewModel={viewModel.fundingFlows}
         locale={locale as AppLocale}
       />
       <PensionKeyMetricsSection metrics={viewModel.keyMetrics} />

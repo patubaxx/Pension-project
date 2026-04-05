@@ -14,11 +14,17 @@ This file **complements** the root **[AGENTS.md](../AGENTS.md)** with concrete p
 | Chart presentation only | `src/features/pension/components/charts/PensionAssetsLineChart.tsx` — props in, no I/O |
 | Number formatting | `src/lib/formatting/` |
 | Processed schema / loader | `src/lib/data/pensionAssets/processedSchema.ts`, `loadProcessed.ts` |
+| Funding flows processed / loader | `src/lib/data/pensionFundingFlows/processedSchema.ts`, `loadProcessed.ts` |
 | Raw validation / raw→processed | `src/lib/data/pensionAssets/fromRawStatfin.ts`, `rawStatfinSchema.ts` |
+| Funding flows raw / transform | `src/lib/data/pensionFundingFlows/rawEtkSchema.ts`, `fromRawEtk.ts` |
 | View-model shapes | `src/features/pension/model/types.ts`, `src/features/pension/transforms/` |
+| Funding flows chart VMs | `src/features/pension/transforms/toFundingFlowsViewModels.ts` |
 | Ingest query / raw file output | `src/scripts/ingest/fetch-pension-assets.mjs`, `src/data/raw/` |
+| ETK funding flows ingest | `src/scripts/ingest/fetch-pension-funding-flows.mjs` |
 | Rebuild processed JSON | `src/scripts/transform/build-processed.ts`, `src/data/processed/` |
+| Rebuild funding flows processed | `src/scripts/transform/build-pension-funding-flows.ts` |
 | PxWeb URLs + dataset narrative constants | `src/lib/data/pensionAssets/sourceConstants.ts` |
+| ETK funding flows constants | `src/lib/data/pensionFundingFlows/sourceConstants.ts` |
 | Global chrome | `src/components/layout/`, `src/components/navigation/` |
 | Shared typography / section shell | `src/components/primitives/` |
 | Locale routing config | `src/lib/i18n/routing.ts`, `src/lib/i18n/request.ts`, `src/middleware.ts` |

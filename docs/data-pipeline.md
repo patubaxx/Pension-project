@@ -21,6 +21,25 @@ Authoritative field names, UI links, and API URL are centralized in:
 
 - `src/lib/data/pensionAssets/sourceConstants.ts` (comments include PxWeb + documentation links)
 
+---
+
+## Dataset — pension funding flows (ETK)
+
+**Earnings-related pension system: assets and funding flows, million EUR**
+
+| Aspect | Value |
+|--------|--------|
+| Provider | Finnish Centre for Pensions (ETK) |
+| PxWeb API path | `fi/ETK/180tyoelakkeiden_rahoitus/10rahavirrat/rahavirrat01_kaikki.px` |
+| Institution slice | **399** — Laitokset yhteensä (all institutions combined) |
+| Unit in raw/processed | Million EUR, current prices |
+
+**Why this source:** Editorial-aligned annual **flows** (premiums, benefits, investment result) from supervised insurers’ reporting. Not the same perimeter as Statistics Finland RTP **S13141** asset stocks — see `docs/funding-flows-source-note.md`.
+
+Constants and filenames: `src/lib/data/pensionFundingFlows/sourceConstants.ts`
+
+**Sign convention (processed):** `flowConvention` = `CONTRIBUTIONS_EXPENSE_MAGNITUDES_INVESTMENT_SIGNED` — contributions, pension expenditure, operating costs, and taxes are **non-negative magnitudes**; investment result is **signed** (loss years negative); TR, transfers, state share, and “Muu” keep **ETK source signs**. **Derived:** `netCashFlowMillionEur` = contributions + investmentReturns − pensionExpenditure (narrow narrative net; excludes other flow lines). Rounded to **0.1** MEUR to match PxWeb decimals.
+
 ## Layer 1 — Ingest (raw)
 
 **Script:** `npm run ingest` → `src/scripts/ingest/fetch-pension-assets.mjs`
@@ -29,6 +48,12 @@ Authoritative field names, UI links, and API URL are centralized in:
 - Writes **verbatim** response to:
   - `src/data/raw/statfin-rtp-11qp-pension-assets.json`
 - No application-specific shaping at this stage (preserves audit trail).
+
+**Funding flows (ETK):** `npm run ingest:funding-flows` → `src/scripts/ingest/fetch-pension-funding-flows.mjs`
+
+- **POST** to `https://tilastot.etk.fi/api/v1/fi/ETK/180tyoelakkeiden_rahoitus/10rahavirrat/rahavirrat01_kaikki.px` (Finnish API path; fixed query in script).
+- Writes **verbatim** JSON-stat2 to:
+  - `src/data/raw/etk-rahavirrat01-kaikki-funding-flows.json`
 
 **Operational notes**
 
@@ -53,12 +78,22 @@ Authoritative field names, UI links, and API URL are centralized in:
 - `unit: "MEUR_STOCK"`
 - `series`: non-empty array of observations
 
+**Funding flows:** `npm run transform:data:funding-flows` → `src/scripts/transform/build-pension-funding-flows.ts`
+
+1. Reads `src/data/raw/etk-rahavirrat01-kaikki-funding-flows.json`.
+2. **`buildProcessedPensionFundingFlowsFile`** (`fromRawEtk.ts`) + Zod `etkFundingFlowsJsonStat2DatasetSchema`.
+3. Writes `src/data/processed/pension-funding-flows-finland.json`.
+
+**Schema:** `processedPensionFundingFlowsFileSchema` in `pensionFundingFlows/processedSchema.ts`.
+
 ## Layer 3 — Runtime load (app)
 
 **Module:** `src/lib/data/pensionAssets/loadProcessed.ts` (marked **`server-only`**)
 
 - `readFile` from `process.cwd()/src/data/processed/{PROCESSED_FILENAME}`.
 - **`processedPensionAssetsFileSchema.parse`** — fails build/dev if artifact missing or invalid.
+
+**Funding flows (not wired to pages yet):** `src/lib/data/pensionFundingFlows/loadProcessed.ts` — `loadProcessedPensionFundingFlows()`.
 
 ## Layer 4 — View models (feature transforms)
 
@@ -81,9 +116,10 @@ These are **pure** functions of the processed file + locale.
 
 1. `npm run ingest`
 2. `npm run transform:data`
-3. Inspect git diff on raw + processed JSON (sanity: year range, magnitudes).
-4. `npm run build`
-5. Spot-check `/en` and `/fi` (chart, tooltips, footnotes).
+3. (Optional flows) `npm run ingest:funding-flows` then `npm run transform:data:funding-flows`
+4. Inspect git diff on raw + processed JSON (sanity: year range, magnitudes).
+5. `npm run build`
+6. Spot-check `/en` and `/fi` (chart, tooltips, footnotes).
 
 ## Caveats (product + data)
 
@@ -100,4 +136,5 @@ These are **pure** functions of the processed file + locale.
 | Processed Zod | `src/lib/data/pensionAssets/processedSchema.ts` |
 | Runtime load | `src/lib/data/pensionAssets/loadProcessed.ts` |
 | Constants / URLs | `src/lib/data/pensionAssets/sourceConstants.ts` |
+| ETK ingest + funding flows pipeline | `src/scripts/ingest/fetch-pension-funding-flows.mjs`, `src/lib/data/pensionFundingFlows/*` |
 | Homepage VM | `src/features/pension/content/home.ts` |
