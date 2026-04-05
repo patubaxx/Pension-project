@@ -1,5 +1,7 @@
 # Pension Project — ratkaisusuunnitelma
 
+> **Huom:** Tämä on alkuperäinen suunnitteludokumentti. Nykyinen toteutus ja datalähde on kuvattu englanniksi `README.md`-tiedostossa sekä `docs/architecture.md`- ja `docs/data-pipeline.md` -dokumenteissa (toteutuksessa käytössä Tilastokeskuksen RTP / 11qp -sarja).
+
 ## 1. Projektin tarkoitus
 
 **Pension Project** on Next.js-pohjainen portfolioverkkosivu, jonka tarkoitus on esitellä visuaalisesti näyttävällä mutta teknisesti kurinalaisella tavalla dataa Suomen eläkejärjestelmän rahoituksesta.

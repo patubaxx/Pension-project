@@ -83,7 +83,7 @@
   },
   "MethodologyPage": {
     "title": "Menetelmä",
-    "intro": "Vaiheessa 2 käytetään toistettavaa polkua: virallinen PxWeb -vastaus tallennetaan raakana, validoidaan, normalisoidaan prosessoiduksi JSON-tiedostoksi ja muunnetaan näkymä- ja kaaviomalleiksi. Tälle sivulle tulee myöhemmin laajempi menetelmäteksti.",
+    "intro": "Sivusto käyttää toistettavaa polkua: virallinen PxWeb-vastaus tallennetaan raakana, validoidaan, normalisoidaan prosessoiduksi JSON-tiedostoksi ja muunnetaan näkymä- ja kaaviomalleiksi. Laajempi menetelmäteksti voidaan lisätä myöhemmin.",
     "listTitle": "Datakerrokset",
     "layers": {
       "raw": "Raw — PxWeb JSON-stat sellaisenaan",
@@ -95,7 +95,7 @@
   },
   "SourcesPage": {
     "title": "Lähteet",
-    "intro": "Etusivulla vaiheessa 2 käytetty ensisijainen aineisto:",
+    "intro": "Etusivulla käytetty ensisijainen aineisto:",
     "statfinHeading": "Kansantalouden tilinpito — työeläkevarat",
     "statfinBody": "Tilastokeskuksen taulukko 11qp (rahoitusvarat ja -velat, vuosi). Sarake: sektori S13141 työeläkelaitokset, instrumentti F0 rahoitusvarat yhteensä, varastosaldot miljoonina euroina.",
     "statfinPxLabel": "PxWeb-taulukko (StatFin)",

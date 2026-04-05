@@ -83,7 +83,7 @@
   },
   "MethodologyPage": {
     "title": "Methodology",
-    "intro": "Phase 2 uses a reproducible path: official PxWeb extracts are stored raw, validated, normalized into a processed JSON artifact, then transformed into chart view models. This page will gain fuller methodology text in a later phase.",
+    "intro": "The site uses a reproducible path: official PxWeb extracts are stored raw, validated, normalized into a processed JSON artifact, then transformed into chart view models. Fuller narrative methodology may be added later.",
     "listTitle": "Data layers",
     "layers": {
       "raw": "Raw — PxWeb JSON-stat as retrieved",
@@ -95,7 +95,7 @@
   },
   "SourcesPage": {
     "title": "Sources",
-    "intro": "Primary dataset used on the homepage in Phase 2:",
+    "intro": "Primary dataset used on the homepage:",
     "statfinHeading": "National financial accounts — employment pension assets",
     "statfinBody": "Statistics Finland table 11qp (financial assets and liabilities, annual). Series: sector S13141 employment pension schemes, instrument F0 total financial assets, stock positions in million euros.",
     "statfinPxLabel": "PxWeb table (StatFin)",

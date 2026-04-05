@@ -40,6 +40,18 @@ export function SectionTitle({
   );
 }
 
+/** Standalone route title (h1). Use on methodology, sources, errors, etc. */
+type PageTitleProps = { children: React.ReactNode; className?: string };
+export function PageTitle({ children, className = "" }: PageTitleProps) {
+  return (
+    <h1
+      className={`font-serif text-2xl font-normal tracking-tight text-stone-900 sm:text-3xl ${className}`}
+    >
+      {children}
+    </h1>
+  );
+}
+
 type LeadProps = { children: React.ReactNode; className?: string };
 export function Lead({ children, className = "" }: LeadProps) {
   return (

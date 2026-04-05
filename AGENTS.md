@@ -188,8 +188,7 @@ Agents should preserve and extend the intended project structure:
 - `src/components/layout`
 - `src/components/navigation`
 - `src/components/primitives`
-- `src/components/charts`
-- `src/features/pension/...`
+- `src/features/pension/...` (includes domain sections and `components/charts/` for the pension chart)
 - `src/lib/i18n`
 - `src/lib/data`
 - `src/lib/formatting`
@@ -198,6 +197,8 @@ Agents should preserve and extend the intended project structure:
 - `src/data/processed`
 - `src/scripts/ingest`
 - `src/scripts/transform`
+
+For **path-level detail** and refresh commands, see `docs/architecture.md` and `docs/agents.md`.
 
 ### 7.2 File naming
 - Use clear descriptive names.
