@@ -1,6 +1,6 @@
 # Data pipeline
 
-End-to-end path from Statistics Finland to the homepage chart. This describes the **application’s** ingest and runtime loading — not a separate published data SDK.
+End-to-end path from **official PxWeb extracts** to the **homepage story**. The app uses **two** processed datasets (Statistics Finland pension asset stocks + ETK funding flows). This describes ingest and runtime loading — not a separate published data SDK.
 
 ## Dataset in use
 
@@ -93,24 +93,28 @@ Constants and filenames: `src/lib/data/pensionFundingFlows/sourceConstants.ts`
 - `readFile` from `process.cwd()/src/data/processed/{PROCESSED_FILENAME}`.
 - **`processedPensionAssetsFileSchema.parse`** — fails build/dev if artifact missing or invalid.
 
-**Funding flows (not wired to pages yet):** `src/lib/data/pensionFundingFlows/loadProcessed.ts` — `loadProcessedPensionFundingFlows()`.
+**Funding flows:** `src/lib/data/pensionFundingFlows/loadProcessed.ts` — `loadProcessedPensionFundingFlows()`. Loaded alongside assets in **`loadHomeStoryViewModel`** for `FundingFlowsSection`.
 
 ## Layer 4 — View models (feature transforms)
 
 **Entry:** `src/features/pension/content/home.ts`
 
-Calls:
+Calls (assets extract):
 
-- `toFundingOverviewViewModel(processed, locale)`
-- `toSignatureChartViewModel(processed)` → points in **billion EUR** for Recharts
-- `toKeyMetricsViewModel(processed, locale)`
+- `toFundingOverviewViewModel(processedAssets, locale)`
+- `toSignatureChartViewModel(processedAssets)` → points in **billion EUR** for Recharts
+- `toKeyMetricsViewModel(processedAssets, locale)`
 
-These are **pure** functions of the processed file + locale.
+Calls (funding flows extract):
+
+- `toFundingFlowsSectionViewModel(processedFlows)` → `FundingFlowsChartViewModel` + `FundingBalanceChartViewModel` (billion EUR chart points)
+
+All **pure** functions of processed JSON + locale where applicable.
 
 ## Layer 5 — UI
 
 - Server sections consume view models only.
-- **`PensionAssetsLineChart`** receives `SignatureChartPoint[]` and locale — no Zod, no file I/O.
+- **`PensionAssetsLineChart`**, **`FundingFlowsMultiLineChart`**, **`FundingNetCashFlowChart`** receive serializable point arrays and locale — no Zod, no file I/O.
 
 ## Refresh checklist
 
@@ -123,9 +127,10 @@ These are **pure** functions of the processed file + locale.
 
 ## Caveats (product + data)
 
-- **Revisions:** National accounts figures are revised; latest year may be **provisional** (stated on the homepage copy).
-- **One series:** The chart is **not** adjusted for inflation, demographics, or liabilities — interpret as **one official stock line**, not solvency.
-- **English API ingest:** Raw fetch uses the **English** PxWeb path; labels in UI are localized via **messages** and **formatting**, not via re-fetching per locale.
+- **Revisions:** National accounts and ETK figures can be revised; latest year may be **provisional** (stated on the homepage copy).
+- **Asset stock chart:** Not adjusted for inflation, demographics, or liabilities — interpret as **one official RTP stock line**, not solvency.
+- **Funding flows:** ETK perimeter and definitions differ from RTP; the **narrow net** in processed data is not a solvency measure (see homepage + `docs/funding-flows-source-note.md`).
+- **English API ingest (assets):** StatFin raw fetch uses the **English** PxWeb path; labels in UI are localized via **messages** and **formatting**, not via re-fetching per locale.
 
 ## Related files (quick map)
 
@@ -137,4 +142,6 @@ These are **pure** functions of the processed file + locale.
 | Runtime load | `src/lib/data/pensionAssets/loadProcessed.ts` |
 | Constants / URLs | `src/lib/data/pensionAssets/sourceConstants.ts` |
 | ETK ingest + funding flows pipeline | `src/scripts/ingest/fetch-pension-funding-flows.mjs`, `src/lib/data/pensionFundingFlows/*` |
+| Funding flows feature transform | `src/features/pension/transforms/toFundingFlowsViewModels.ts` |
 | Homepage VM | `src/features/pension/content/home.ts` |
+| Funding flows section | `src/features/pension/components/FundingFlowsSection.tsx` |

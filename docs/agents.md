@@ -11,7 +11,7 @@ This file **complements** the root **[AGENTS.md](../AGENTS.md)** with concrete p
 | Homepage copy (EN/FI) | `src/messages/en.json`, `src/messages/fi.json` — keep keys in sync |
 | Homepage layout/sections | `src/features/pension/components/*.tsx` |
 | New homepage section | Add component under `src/features/pension/components/`, compose from `src/app/[locale]/page.tsx`, extend `loadHomeStoryViewModel` if new data needed |
-| Chart presentation only | `src/features/pension/components/charts/PensionAssetsLineChart.tsx` — props in, no I/O |
+| Chart presentation only | `PensionAssetsLineChart.tsx`, `FundingFlowsMultiLineChart.tsx`, `FundingNetCashFlowChart.tsx` — props in, no I/O |
 | Number formatting | `src/lib/formatting/` |
 | Processed schema / loader | `src/lib/data/pensionAssets/processedSchema.ts`, `loadProcessed.ts` |
 | Funding flows processed / loader | `src/lib/data/pensionFundingFlows/processedSchema.ts`, `loadProcessed.ts` |

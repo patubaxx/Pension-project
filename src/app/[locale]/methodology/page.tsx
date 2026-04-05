@@ -31,6 +31,7 @@ export default async function MethodologyPage({ params }: PageProps) {
       <Stack gap="lg">
         <PageTitle>{t("title")}</PageTitle>
         <Body className="text-lg">{t("intro")}</Body>
+        <Body className="max-w-2xl text-stone-600">{t("datasetsNote")}</Body>
         <div>
           <SectionTitle className="mt-10 text-xl sm:text-2xl">
             {t("listTitle")}
