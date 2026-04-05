@@ -1,6 +1,6 @@
 # Data pipeline
 
-End-to-end path from Statistics Finland to the homepage chart.
+End-to-end path from Statistics Finland to the homepage chart. This describes the **application’s** ingest and runtime loading — not a separate published data SDK.
 
 ## Dataset in use
 

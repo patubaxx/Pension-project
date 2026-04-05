@@ -4,9 +4,9 @@
 
 ## Executive summary
 
-The repository **clearly implements** a server-first Next.js app with **locale-prefixed routes**, a **committed processed-data contract**, and **feature-local transforms**. Technical clarity is **strong** for a portfolio-sized codebase. **Open-source polish** was the main gap before this pass (README, LICENSE, CONTRIBUTING, structured docs); those are now addressed.
+The repository **clearly implements** a server-first Next.js app with **locale-prefixed routes**, a **committed processed-data contract**, and **feature-local transforms**. Technical clarity is **strong** for a portfolio-sized codebase. **OSS release prep** added **MIT** (copyright **patubaxx**), **`.nvmrc`** + **`engines.node`**, **GitHub Actions CI** (`npm ci`, lint, build), and README/CONTRIBUTING positioning as a **reference application**, not an npm library.
 
-**Launch readiness:** Suitable for **portfolio deploy** once you run through [qa-checklist.md](./qa-checklist.md). **Public OSS listing** is viable after confirming **license/copyright**, **ingest network assumptions**, and optionally adding **CI**.
+**Launch readiness:** Suitable for **portfolio deploy** after [qa-checklist.md](./qa-checklist.md). **Public OSS publication** is viable with the above in place; still verify **PxWeb ingest** when refreshing data and monitor **Next.js middleware** deprecation notices.
 
 ---
 
@@ -51,8 +51,8 @@ The repository **clearly implements** a server-first Next.js app with **locale-p
 
 ### Open source / governance
 
-- **LICENSE** was missing — **MIT** added with generic copyright; **replace** with your legal name/org before a serious public release if desired.
-- **CONTRIBUTING.md** was missing — added (short, aligned with constraints).
+- **LICENSE:** **MIT** with copyright **patubaxx** (OSS release prep).
+- **CONTRIBUTING.md:** Present; emphasizes small PRs and scope discipline.
 
 ### Accessibility (minor residual)
 
@@ -60,7 +60,7 @@ The repository **clearly implements** a server-first Next.js app with **locale-p
 
 ### Operations
 
-- **No CI** in repo (GitHub Actions, etc.) — recommend add `lint` + `build` on PR for OSS.
+- **CI:** `.github/workflows/ci.yml` runs on **push/PR** to `main` or `master`: `npm ci`, `npm run lint`, `npm run build` (Node from `.nvmrc`).
 - **Next.js middleware** deprecation warning (framework): monitor Next.js migration guidance (`proxy` vs `middleware` naming) — not a functional blocker at audit time.
 
 ### i18n
@@ -82,17 +82,17 @@ The repository **clearly implements** a server-first Next.js app with **locale-p
 | Data | Processed file committed; build fails loudly if invalid/missing |
 | Locales | `/en` and `/fi` static generation |
 | Sources page | External links + constants centralized |
-| Legal OSS | LICENSE + CONTRIBUTING present; verify copyright line |
+| Legal OSS | MIT + patubaxx; CONTRIBUTING present |
+| CI | Lint + build on default branches |
+| Node policy | `.nvmrc` (20.x) + `engines.node` ≥ 20 |
 
 ---
 
 ## Recommended next steps (prioritized)
 
-1. **Run** [qa-checklist.md](./qa-checklist.md) before portfolio or public repo launch.
-2. **Add CI** (lint + build) if the repo goes public.
-3. **Optional:** Add `engines` in `package.json` for Node version clarity.
-4. **Optional:** Extend methodology page with prose when you want more narrative depth (not required for technical clarity).
-5. **Optional:** Table fallback or `prefers-reduced-motion` for chart if targeting strict a11y audits.
+1. **Run** [qa-checklist.md](./qa-checklist.md) before each significant release.
+2. **Optional:** Extend methodology page with prose when you want more narrative depth (not required for technical clarity).
+3. **Optional:** Table fallback or `prefers-reduced-motion` for chart if targeting strict a11y audits.
 
 ---
 

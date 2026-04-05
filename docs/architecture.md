@@ -2,6 +2,8 @@
 
 This document describes **how the code is organized today**, not a future target state.
 
+**Repository type:** Pension Project is a **deployable Next.js application** and **reference implementation** for an editorial data story. It is **not** an npm chart library or a reusable package published from this repo.
+
 ## Routing and locales
 
 - **App Router** under `src/app/`.

@@ -18,7 +18,7 @@ Reusable checklist for **portfolio launch** and **public repository** readiness.
 
 ## Functional
 
-- [ ] **`npm install`** from clean clone succeeds.
+- [ ] **`npm install`** from clean clone succeeds (or **`npm ci`** after lockfile is present).
 - [ ] **`npm run dev`** — `/` redirects to locale; `/en` and `/fi` render.
 - [ ] **Nav links** — Story, Methodology, Sources work for both locales.
 - [ ] **Locale switcher** preserves path, switches messages and number formatting.
@@ -56,13 +56,14 @@ Reusable checklist for **portfolio launch** and **public repository** readiness.
 
 ## Open source / repo hygiene
 
-- [ ] **README** explains purpose, setup, scripts, structure, data source, i18n (not generic create-next-app text).
-- [ ] **LICENSE** present; copyright line acceptable to maintainer.
-- [ ] **CONTRIBUTING.md** present for external PRs.
+- [ ] **README** positions the repo as an **OSS application / reference implementation** (not an npm chart library or analytics platform).
+- [ ] **LICENSE** present (**MIT**); copyright line matches maintainer policy (**patubaxx**).
+- [ ] **CONTRIBUTING.md** present; contribution model (small PRs, scope discipline) is clear.
+- [ ] **Node policy:** **`.nvmrc`** and **`package.json` → `engines.node`** align with CI and local dev.
+- [ ] **CI** workflow runs **`npm ci`**, **`npm run lint`**, **`npm run build`** on push/PR to default branch(es).
 - [ ] **docs/** linked from README (`architecture`, `data-pipeline`, audit, this checklist, agents).
 - [ ] **AGENTS.md** matches real paths and workflows.
 - [ ] **No secrets** in repo; document if `.env` ever introduced.
-- [ ] **Optional:** CI badge / workflow for lint + build.
 
 ---
 

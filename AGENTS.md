@@ -16,7 +16,9 @@ The purpose of these rules is to keep implementation:
 
 ## 1. Project context
 
-Pension Project is a multilingual Next.js portfolio site that presents visually refined data stories about Finnish pension system funding.
+Pension Project is an **open-source Next.js application** and **reference implementation**: a multilingual editorial site about Finnish pension funding data. It is **not** intended as a reusable npm package or a general-purpose chart library from this repository.
+
+The product presents visually refined data stories about Finnish pension system funding.
 
 The product direction is:
 - premium editorial, not dashboard-first

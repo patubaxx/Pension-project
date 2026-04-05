@@ -1,11 +1,20 @@
 # Pension Project
 
-Multilingual **Next.js** portfolio site: an editorial, evidence-led view of **Finnish employment pension scheme financial assets** as published in **Statistics Finland’s national financial accounts** (one official time series, one signature chart).
+**Open-source project and reference implementation** — a multilingual **Next.js** application that presents one **editorial data story**: Finnish **employment pension scheme financial assets** as published in **Statistics Finland’s national financial accounts** (one official series, one signature chart).
+
+This is **not** an npm library, a generic chart toolkit, or a pension analytics / policy platform. It is a **whole app** you clone and run to study or fork **editorial presentation + a disciplined data pipeline**.
 
 **Goals**
 
 1. **Portfolio / editorial** — calm reading rhythm, clear narrative, visible sources and caveats (not a dashboard).
-2. **Technical clarity** — reproducible **raw → validate → processed → view-model → UI** data path, thin routes, server-first rendering.
+2. **Technical clarity** — reproducible **raw → validate → processed → view-model → UI** path, thin routes, server-first rendering.
+
+## Requirements
+
+- **Node.js** **≥ 20** (see `package.json` → `engines` and **`.nvmrc`** for local version managers).
+- No runtime `.env` is required for the default app: it reads committed **processed JSON** from disk at build/runtime.
+
+**CI:** pushes and pull requests to `main` or `master` run **`npm ci`**, **`npm run lint`**, and **`npm run build`** (see [`.github/workflows/ci.yml`](./.github/workflows/ci.yml)).
 
 ## Stack
 
@@ -15,12 +24,6 @@ Multilingual **Next.js** portfolio site: an editorial, evidence-led view of **Fi
 - **Zod** — raw + processed data schemas
 - **Recharts** — single client chart component
 - **ESLint** + **Prettier**
-
-## Requirements
-
-- **Node.js** 20+ recommended (aligned with `package.json` engines-style dev deps)
-
-No runtime `.env` is required for the default static dataset: the app reads committed **processed JSON** from disk at build/runtime.
 
 ## Quick start
 
@@ -36,6 +39,14 @@ Production build:
 ```bash
 npm run build
 npm run start
+```
+
+For a clean install matching CI:
+
+```bash
+npm ci
+npm run lint
+npm run build
 ```
 
 ## Scripts
@@ -77,31 +88,31 @@ Deeper detail: **[docs/architecture.md](./docs/architecture.md)** and **[docs/da
 - **Table:** national financial accounts, **11qp** (`statfin_rtp_pxt_11qp`)  
 - **Series:** sector **S13141** (employment pension schemes), instrument **F0** (total financial assets), **stock** positions, **million EUR**
 
-URLs and assumptions are documented in `src/lib/data/pensionAssets/sourceConstants.ts` and **docs/data-pipeline.md**.
+URLs and assumptions: `src/lib/data/pensionAssets/sourceConstants.ts` and **[docs/data-pipeline.md](./docs/data-pipeline.md)**.
 
 ## Internationalization
 
 - Locales: **`en`** (default), **`fi`**
-- All primary UI strings live in **`src/messages/{locale}.json`**
-- Numeric presentation uses **`src/lib/formatting/`** with an explicit locale (from the route)
+- UI strings: **`src/messages/{locale}.json`**
+- Numbers: **`src/lib/formatting/`** with locale from the route
 
-## Documentation index
+## Documentation
 
 | Doc | Audience |
 |-----|----------|
 | [docs/architecture.md](./docs/architecture.md) | Developers — routing, layers, boundaries |
-| [docs/data-pipeline.md](./docs/data-pipeline.md) | Developers — ingest, schemas, refresh |
-| [docs/repository-audit.md](./docs/repository-audit.md) | Maintainers — strengths, gaps, launch notes |
-| [docs/qa-checklist.md](./docs/qa-checklist.md) | Pre-launch / pre-release QA |
+| [docs/data-pipeline.md](./docs/data-pipeline.md) | Ingest, schemas, refresh |
+| [docs/repository-audit.md](./docs/repository-audit.md) | Strengths, gaps, release notes |
+| [docs/qa-checklist.md](./docs/qa-checklist.md) | Pre-release QA |
 | [docs/agents.md](./docs/agents.md) | Coding agents — safe edit zones |
-| [AGENTS.md](./AGENTS.md) | Full agent policy (constraints, style) |
-| [CONTRIBUTING.md](./CONTRIBUTING.md) | Contributors |
-| [docs/solution-specification.md](./docs/solution-specification.md) | Original Finnish planning spec (historical context; implementation may differ) |
-
-## License
-
-See [LICENSE](./LICENSE) (MIT). Adjust copyright holder before a public release if needed.
+| [AGENTS.md](./AGENTS.md) | Full agent policy |
+| [CONTRIBUTING.md](./CONTRIBUTING.md) | How to contribute |
+| [docs/solution-specification.md](./docs/solution-specification.md) | Original Finnish planning spec (historical; implementation uses StatFin RTP for this series) |
 
 ## Contributing
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md).
+Small, focused PRs are welcome — especially docs, fixes, and clarity improvements. Please preserve architecture and scope; see **[CONTRIBUTING.md](./CONTRIBUTING.md)**.
+
+## License
+
+[MIT](./LICENSE) — Copyright (c) patubaxx

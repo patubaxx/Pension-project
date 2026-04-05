@@ -2,6 +2,8 @@
 
 This file **complements** the root **[AGENTS.md](../AGENTS.md)** with concrete paths and workflows for **this repository’s layout**. If something conflicts, prefer **AGENTS.md** for product policy and **this file** for file placement.
 
+**Scope:** This repo is a **single application** (`private: true` in `package.json`), not a library to publish to npm. Changes should preserve that boundary unless maintainers explicitly broaden it.
+
 ## Safe zones (typical tasks)
 
 | Task | Where to work |
@@ -44,7 +46,10 @@ Commit raw + processed if you want **reproducible** deploys and auditable diffs.
 
 ## Verification commands
 
+Same as CI:
+
 ```bash
+npm ci
 npm run lint
 npm run build
 ```
