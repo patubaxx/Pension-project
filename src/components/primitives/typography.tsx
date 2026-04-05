@@ -20,10 +20,19 @@ export function DisplayTitle({ children, className = "" }: DisplayTitleProps) {
   );
 }
 
-type SectionTitleProps = { children: React.ReactNode; className?: string };
-export function SectionTitle({ children, className = "" }: SectionTitleProps) {
+type SectionTitleProps = {
+  children: React.ReactNode;
+  className?: string;
+  id?: string;
+};
+export function SectionTitle({
+  children,
+  className = "",
+  id,
+}: SectionTitleProps) {
   return (
     <h2
+      id={id}
       className={`font-serif text-2xl font-normal tracking-tight text-stone-900 sm:text-3xl ${className}`}
     >
       {children}

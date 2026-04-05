@@ -2,13 +2,14 @@
   "Meta": {
     "siteName": "Pension Project",
     "homeTitle": "Suomen eläkerahoitus",
-    "homeDescription": "Toimituksellinen data-tarina siitä, miten Suomen eläkejärjestelmää rahoitetaan.",
+    "homeDescription": "Toimituksellinen näkymä työeläkevaroihin kansantalouden tilinpidossa—mitä mittari on, miksi se on hyödyllinen ja miten sitä kannattaa lukea.",
     "methodologyTitle": "Menetelmä",
     "methodologyDescription": "Miten hankimme, validoimme ja esitämme eläkerahoituksen dataa.",
     "sourcesTitle": "Lähteet",
     "sourcesDescription": "Tarinan ensisijaiset viitteet ja aineistot."
   },
   "Nav": {
+    "ariaLabel": "Päänavigaatio",
     "home": "Tarina",
     "methodology": "Menetelmä",
     "sources": "Lähteet",
@@ -18,44 +19,65 @@
   },
   "PensionHome": {
     "hero": {
-      "kicker": "Toimituksellinen data-tarina",
+      "kicker": "Toimituksellinen data-tarina · Suomi",
       "title": "Miten Suomen eläkejärjestelmää rahoitetaan",
-      "lead": "Rauhallinen, näyttöön perustuva katsaus rahoitusvirtoihin ja varantoihin—rakennettu selkeyteen, ei kojelautoihin."
+      "lead": "Tällä sivulla seurataan yhtä virallista kansantalouden tilinpidon sarjaa: työeläkelaitosten taseen rahoitusvarantoa.",
+      "framing": "Kyseessä on tase-näkökulma rahoituskapasiteettiin—ei kuva etuuksista, maksuista tai yksilöoikeuksista, eikä ennuste.",
+      "statLabel": "Viimeisin havainto",
+      "statContext": "Vuoden lopun varastosaldo, {year}",
+      "sourceLine": "Tilastokeskus · kansantalouden tilinpito (RTP), sektori S13141"
     },
     "sections": {
       "fundingOverview": {
-        "title": "Rahoituksen kokonaiskuva",
-        "lead": "Lakisääteinen työeläkejärjestelmä rahoitetaan osin sijoitusvarannoilla, jotka työeläkelaitosten taseissa muodostavat eläkevaroja. Näiden rahoitusvarantojen koko kertoo, kuinka suureksi järjestelmän puskuri on kasvanut ajan myötä.",
-        "highlight": "Vuoden {year} lopussa työeläkelaitosten rahoitusvarat olivat noin {amount} (kansantalouden tilinpitö, varastosaldot).",
-        "attribution": "Lähde: Tilastokeskus, kansantalouden tilinpito (RTP), sektori S13141 työeläkelaitokset, instrumentti rahoitusvarat yhteensä (F0), miljoonaa euroa."
+        "title": "Miksi tämä mittari on tärkeä",
+        "lead": "Lakisääteinen työeläkejärjestelmä nojaa osin sijoitettuihin varantoihin. Kansantalouden tilinpidossa ne näkyvät työeläkelaitosten taseen rahoitusvaroina.",
+        "interpretation": "Varannon koko kertoo, kuinka suureksi kirjattu sijoituspuskuri on kasvanut vuosien varrella. Mittari vastaa suppeaan mutta selkeään kysymykseen: kuinka suuri tämä kirjattu varanto on vuosi vuodelta?",
+        "bridge": "Sarja kattaa vuodet {firstYear}–{latestYear}; alla oleva käyrä näyttää jokaisen vuoden prosessoidusta otteesta.",
+        "attribution": "Lähde: Tilastokeskus, kansantalouden tilinpito (RTP), sektori S13141 työeläkelaitokset, instrumentti rahoitusvarat yhteensä (F0), miljoonaa euroa, vuoden lopun varastosaldot."
       },
       "signatureViz": {
-        "title": "Eläkevarat ajan yli",
-        "deck": "Työeläkelaitosten taseen rahoitusvarat kansantalouden tilinpidon mukaan. Arvot ovat vuoden lopun varastosaldoja, ei vuotuisia virtoja.",
-        "caption": "Kansantalouden tilinpidon lukuja tarkistetaan ja korjataan menetelmä- ja lähdemuutosten myötä; uusin vuosi voi olla alustava. Akseli: miljardia euroa.",
+        "timeRangeKicker": "{from}–{to}",
+        "title": "Tunnusomainen sarja",
+        "seriesLabel": "Työeläkelaitokset — rahoitusvarat yhteensä (kansantalouden tilinpito)",
+        "deck": "Jokainen piste on vuoden lopun kokonaissaldo miljardeina euroina täsmälleen samalle sektorille ja instrumentille kuin kansantalouden tilinpidossa julkaistaan.",
+        "takeaway": "Näet pitkän jakson kertyneistä rahoitusvaroista yhden instituution taseessa—et vuotuisia kassavirtoja tai koko eläkejärjestelmän taloudellista jalanjälkeä.",
         "ariaLabel": "Käyrä työeläkelaitosten rahoitusvaroista vuosina {from}–{to}.",
+        "ariaLabelEmpty": "Kaavioalue: sarjadatoja ei ole saatavilla.",
         "chartYear": "Vuosi",
-        "axisBillionsEur": "mrd €"
+        "tooltipSeriesLabel": "Sarja",
+        "tooltipValueLabel": "Saldo",
+        "lineName": "Rahoitusvarat yhteensä, työeläkelaitokset",
+        "axisBillionsEur": "mrd €",
+        "readThisTitle": "Miten viivaa luetaan",
+        "readThisBody": "Vertaa käyrän korkeutta vuosien välillä: korkeampi tarkoittaa suurempaa kirjattua varantoa vuoden lopussa. Katkoviiva merkitsee viimeisintä vuotta tässä otteessa—ankkuri, ei ennuste.",
+        "sourceNote": "Data: Tilastokeskus (RTP / 11qp), sektori S13141, instrumentti F0. Lukuja voidaan korjata menetelmä- ja lähdemuutosten myötä.",
+        "caption": "Kansantalouden tilinpitoa tarkistetaan ajan myötä; uusin vuosi voi olla alustava. Akseleita on tiivistetty luettavuuden vuoksi; työkaluvihje näyttää yhden desimaalin.",
+        "emptyState": "Tälle näkymälle ei ole kaaviodataa."
       },
       "keyMetrics": {
-        "title": "Kontekstissa",
+        "title": "Tukeva konteksti",
+        "lead": "Kolme viitekohtaa tiivistää saman prosessoidun sarjan. Ne ovat kuvailevia, ei ohjeellisia—hyödyllisiä vierekkäin käyrän kanssa.",
+        "howToReadLabel": "Näin näitä lukuja kannattaa lukea",
+        "howToReadAria": "Ohje tukilukujen tulkintaan",
+        "howToReadBody": "Kaikki arvot ovat varastosaldoja samasta kansantalouden tilinpidon otteesta. Kasvu vertaa viimeisintä vuotta sarjan ensimmäiseen vuoteen; se ei annualisoi tuottoja eikä erottele arvostusvaikutuksia.",
         "latestLabel": "Viimeisin vuoden loppu",
         "latestYearNote": "Varastosaldo, {year}",
         "growthLabel": "Muutos vuodesta {year}",
-        "growthHint": "Suhteessa sarjan ensimmäiseen vuoteen.",
+        "growthHint": "Suhteessa sarjan ensimmäiseen vuoteen (kokonaissaldojen suhde).",
         "spanLabel": "Sarjan pituus",
         "yearCount": "{count} vuosipistettä",
-        "spanHint": "Peräkkäiset vuodet prosessoidussa sarjassa."
+        "spanHint": "Peräkkäiset vuodet prosessoidussa sarjassa.",
+        "notInference": "Mitä tämä ei tarkoita: ei maksukykyarvio, ei korvike laitostason raportoinnille eikä ohje henkilökohtaisiin eläkepäätöksiin."
       },
-      "methodologyPreview": {
-        "title": "Menetelmä",
-        "body": "Erotamme raakalähteet, validoinnin, normalisoinnin ja esityksen, jotta tarina pysyy tarkistettavissa kasvaessaan.",
-        "cta": "Lue menetelmä"
-      },
-      "sourcesPreview": {
-        "title": "Lähteet",
-        "body": "Jokainen luku pohjautuu dokumentoituihin lähteisiin. Lähteet-sivulla on viitteet ja dataketju.",
-        "cta": "Näytä lähteet"
+      "storyTrust": {
+        "title": "Menetelmä ja lähteet",
+        "intro": "Tavoite on läpinäkyvyys: raakasyötteet eroteltu siitä, mitä ruudulla näkyy, ja viitteet helposti tarkistettavissa.",
+        "methodologyTitle": "Menetelmä",
+        "methodologyBody": "Dokumentoimme noston, validoinnin, normalisoinnin ja muunnokset, jotka tekevät prosessoidusta JSONista kaaviovalmiit näkymämallit—jotta tarina pysyy tarkistettavissa.",
+        "methodologyCta": "Lue menetelmä",
+        "sourcesTitle": "Lähteet",
+        "sourcesBody": "Etusivun käyrä nojaa Tilastokeskuksen kansantalouden tilinpidon taulukkoon (11qp), sektori S13141 ja instrumentti F0; tarkempi ketju lähteet-sivulla.",
+        "sourcesCta": "Näytä lähteet"
       }
     }
   },
@@ -80,7 +102,7 @@
     "statfinDocLabel": "RTP-dokumentaatio"
   },
   "Footer": {
-    "note": "Vaihe 2 — virallinen Tilastokeskuksen sarja; päivitä komennoilla npm run ingest && npm run transform:data."
+    "note": "Vaihe 3 — virallinen Tilastokeskuksen sarja; päivitä komennoilla npm run ingest && npm run transform:data."
   },
   "NotFound": {
     "title": "Sivua ei löytynyt",

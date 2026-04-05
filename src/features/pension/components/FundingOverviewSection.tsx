@@ -15,17 +15,20 @@ export async function FundingOverviewSection({
   const t = await getTranslations("PensionHome.sections.fundingOverview");
 
   return (
-    <Section id={PENSION_ANCHORS.fundingOverview}>
-      <Stack>
+    <Section id={PENSION_ANCHORS.fundingOverview} className="pt-12 sm:pt-16">
+      <Stack gap="md">
         <SectionTitle>{t("title")}</SectionTitle>
-        <Body className="max-w-2xl">{t("lead")}</Body>
-        <Body className="max-w-2xl text-stone-800">
-          {t("highlight", {
-            year: viewModel.latestYear,
-            amount: viewModel.latestFormatted,
+        <Body className="max-w-2xl text-pretty">{t("lead")}</Body>
+        <Body className="max-w-2xl text-pretty text-stone-700">
+          {t("interpretation")}
+        </Body>
+        <Body className="max-w-2xl text-pretty text-sm text-stone-600">
+          {t("bridge", {
+            firstYear: viewModel.firstYear,
+            latestYear: viewModel.latestYear,
           })}
         </Body>
-        <Body className="max-w-2xl text-sm text-stone-600">
+        <Body className="max-w-2xl border-l border-stone-200 pl-5 text-sm leading-relaxed text-stone-600">
           {t("attribution")}
         </Body>
       </Stack>

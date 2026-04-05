@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { FundingOverviewSection } from "@/features/pension/components/FundingOverviewSection";
 import { HeroSection } from "@/features/pension/components/HeroSection";
-import { MethodologyPreview } from "@/features/pension/components/MethodologyPreview";
 import { PensionAssetsSignatureSection } from "@/features/pension/components/PensionAssetsSignatureSection";
 import { PensionKeyMetricsSection } from "@/features/pension/components/PensionKeyMetricsSection";
-import { SourcesPreview } from "@/features/pension/components/SourcesPreview";
+import { StoryTrustSection } from "@/features/pension/components/StoryTrustSection";
 import { loadHomeStoryViewModel } from "@/features/pension/content/home";
 import type { AppLocale } from "@/lib/i18n/routing";
 
@@ -32,15 +31,14 @@ export default async function HomePage({ params }: PageProps) {
 
   return (
     <>
-      <HeroSection />
+      <HeroSection fundingOverview={viewModel.fundingOverview} />
       <FundingOverviewSection viewModel={viewModel.fundingOverview} />
       <PensionAssetsSignatureSection
         chart={viewModel.signatureChart}
         locale={locale as AppLocale}
       />
       <PensionKeyMetricsSection metrics={viewModel.keyMetrics} />
-      <MethodologyPreview />
-      <SourcesPreview />
+      <StoryTrustSection />
     </>
   );
 }

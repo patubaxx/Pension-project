@@ -2,13 +2,14 @@
   "Meta": {
     "siteName": "Pension Project",
     "homeTitle": "Finnish pension funding",
-    "homeDescription": "An editorial data story on how Finland’s pension system is funded.",
+    "homeDescription": "An editorial view of employment pension reserves in Finland’s national accounts—what the measure is, why it matters, and how to read it carefully.",
     "methodologyTitle": "Methodology",
     "methodologyDescription": "How we source, validate, and present pension funding data.",
     "sourcesTitle": "Sources",
     "sourcesDescription": "Primary references and datasets behind this story."
   },
   "Nav": {
+    "ariaLabel": "Primary navigation",
     "home": "Story",
     "methodology": "Methodology",
     "sources": "Sources",
@@ -18,44 +19,65 @@
   },
   "PensionHome": {
     "hero": {
-      "kicker": "Editorial data story",
+      "kicker": "Editorial data story · Finland",
       "title": "How Finland’s pension system is funded",
-      "lead": "A calm, evidence-led walkthrough of funding flows and reserves—built for clarity, not dashboards."
+      "lead": "This page follows one official national-accounts series: the stock of financial assets held by employment pension schemes.",
+      "framing": "It is a balance-sheet lens on funding capacity—not a picture of benefits, contributions, or individual entitlements, and not a forecast.",
+      "statLabel": "Latest observation",
+      "statContext": "Year-end stock position, {year}",
+      "sourceLine": "Statistics Finland · national financial accounts (RTP), sector S13141"
     },
     "sections": {
       "fundingOverview": {
-        "title": "Funding overview",
-        "lead": "Finland’s statutory earnings-related pensions are partly funded through invested reserves held by employment pension schemes. The stock of those financial assets is one useful lens on how large the system’s buffer has become over time.",
-        "highlight": "At year-end {year}, employment pension schemes held about {amount} in financial assets (national accounts, stock positions).",
-        "attribution": "Source: Statistics Finland, national financial accounts (RTP), sector S13141 employment pension schemes, instrument total financial assets (F0), million euros."
+        "title": "Why this measure matters",
+        "lead": "Statutory earnings-related pensions are partly backed by invested reserves. In the national accounts, those holdings appear as financial assets on employment pension schemes’ balance sheets.",
+        "interpretation": "The size of that asset stock is one way to see how large the system’s invested buffer has become over time. It answers a narrow question well: how big is this recorded reserve, year after year?",
+        "bridge": "The series runs from {firstYear} to {latestYear}; the chart below shows every year in the processed extract.",
+        "attribution": "Source: Statistics Finland, national financial accounts (RTP), sector S13141 employment pension schemes, instrument total financial assets (F0), million euros, year-end stock positions."
       },
       "signatureViz": {
-        "title": "Pension assets over time",
-        "deck": "Total financial assets on employment pension schemes’ balance sheets, as recorded in Finland’s national accounts. Values are stock positions at year-end, not annual flows.",
-        "caption": "National accounts figures are revised as methods and source data improve; the latest year is sometimes provisional. Axis shows billions of euro.",
+        "timeRangeKicker": "{from}–{to}",
+        "title": "The signature series",
+        "seriesLabel": "Employment pension schemes — total financial assets (national accounts)",
+        "deck": "Each point is a year-end stock total in billions of euro, exactly as published for this sector and instrument in Finland’s national financial accounts.",
+        "takeaway": "You are looking at a long arc of accumulated financial holdings on one institutional balance sheet—not annual cash inflows or outflows, and not the pension system’s full economic footprint.",
         "ariaLabel": "Line chart of employment pension scheme financial assets from {from} to {to}.",
+        "ariaLabelEmpty": "Chart area: no series data available.",
         "chartYear": "Year",
-        "axisBillionsEur": "bn EUR"
+        "tooltipSeriesLabel": "Series",
+        "tooltipValueLabel": "Stock",
+        "lineName": "Total financial assets, employment pension schemes",
+        "axisBillionsEur": "bn EUR",
+        "readThisTitle": "How to read this line",
+        "readThisBody": "Compare height between years: higher means a larger recorded asset stock at year-end. The dashed vertical line marks the latest year in this extract—useful as an anchor, not a prediction.",
+        "sourceNote": "Data: Statistics Finland (RTP / 11qp), sector S13141, instrument F0. Figures can be revised as methods and source data are updated.",
+        "caption": "National accounts are revised over time; the most recent year may be provisional. Axis labels are shortened for legibility; tooltips show one decimal.",
+        "emptyState": "No chart data is available for this view."
       },
       "keyMetrics": {
-        "title": "In context",
+        "title": "Supporting context",
+        "lead": "Three reference points summarize the same processed series. They are descriptive, not prescriptive—useful for orientation alongside the line chart.",
+        "howToReadLabel": "How to read these figures",
+        "howToReadAria": "Guidance on reading the supporting figures",
+        "howToReadBody": "All values are stock positions from the same national-accounts extract. Growth compares the latest year to the first year in the series; it does not annualize returns or adjust for valuation effects.",
         "latestLabel": "Latest year-end",
         "latestYearNote": "Stock position, {year}",
         "growthLabel": "Change since {year}",
-        "growthHint": "Versus first year in this series.",
+        "growthHint": "Versus the first year in this series (ratio of totals).",
         "spanLabel": "Observation span",
         "yearCount": "{count} annual points",
-        "spanHint": "Consecutive years in the processed series."
+        "spanHint": "Consecutive years in the processed series.",
+        "notInference": "What this does not mean: it is not a solvency verdict, not a replacement for scheme-level reporting, and not guidance for personal pension decisions."
       },
-      "methodologyPreview": {
-        "title": "Methodology",
-        "body": "We separate raw sources, validation, normalization, and presentation so the story stays auditable as it grows.",
-        "cta": "Read methodology"
-      },
-      "sourcesPreview": {
-        "title": "Sources",
-        "body": "Every figure traces back to documented inputs. The sources page lists references and data lineage.",
-        "cta": "View sources"
+      "storyTrust": {
+        "title": "Methodology and sources",
+        "intro": "The goal is simple transparency: keep raw inputs separate from what you see on screen, and make it easy to verify what is being plotted.",
+        "methodologyTitle": "Methodology",
+        "methodologyBody": "We document ingestion, validation, normalization, and the transforms that turn processed JSON into chart-ready view models—so the story stays auditable as it grows.",
+        "methodologyCta": "Read methodology",
+        "sourcesTitle": "Sources",
+        "sourcesBody": "The homepage chart traces to Statistics Finland’s national financial accounts table (11qp) for sector S13141 and instrument F0, with lineage on the sources page.",
+        "sourcesCta": "View sources"
       }
     }
   },
@@ -80,7 +102,7 @@
     "statfinDocLabel": "RTP documentation"
   },
   "Footer": {
-    "note": "Phase 2 — official Statistics Finland series; ingest with npm run ingest && npm run transform:data."
+    "note": "Phase 3 — official Statistics Finland series; refresh data with npm run ingest && npm run transform:data."
   },
   "NotFound": {
     "title": "Page not found",

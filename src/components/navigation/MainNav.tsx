@@ -8,18 +8,21 @@ export async function MainNav() {
   return (
     <nav
       className="flex flex-wrap items-center justify-between gap-4 border-b border-stone-200/80 py-4"
-      aria-label="Primary"
+      aria-label={t("ariaLabel")}
     >
       <ul className="flex flex-wrap items-center gap-8 text-sm font-medium text-stone-700">
         <li>
-          <Link href="/" className="transition-colors hover:text-stone-900">
+          <Link
+            href="/"
+            className="rounded-sm transition-colors hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800"
+          >
             {t("home")}
           </Link>
         </li>
         <li>
           <Link
             href="/methodology"
-            className="transition-colors hover:text-stone-900"
+            className="rounded-sm transition-colors hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800"
           >
             {t("methodology")}
           </Link>
@@ -27,7 +30,7 @@ export async function MainNav() {
         <li>
           <Link
             href="/sources"
-            className="transition-colors hover:text-stone-900"
+            className="rounded-sm transition-colors hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800"
           >
             {t("sources")}
           </Link>
