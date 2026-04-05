@@ -1,0 +1,78 @@
+{
+  "Meta": {
+    "siteName": "Pension Project",
+    "homeTitle": "Finnish pension funding",
+    "homeDescription": "An editorial data story on how Finland’s pension system is funded.",
+    "methodologyTitle": "Methodology",
+    "methodologyDescription": "How we source, validate, and present pension funding data.",
+    "sourcesTitle": "Sources",
+    "sourcesDescription": "Primary references and datasets behind this story."
+  },
+  "Nav": {
+    "home": "Story",
+    "methodology": "Methodology",
+    "sources": "Sources",
+    "language": "Language",
+    "finnish": "Finnish",
+    "english": "English"
+  },
+  "PensionHome": {
+    "hero": {
+      "kicker": "Editorial data story",
+      "title": "How Finland’s pension system is funded",
+      "lead": "A calm, evidence-led walkthrough of funding flows and reserves—built for clarity, not dashboards."
+    },
+    "sections": {
+      "fundingOverview": {
+        "title": "Funding overview",
+        "placeholder": "This section will summarize contribution structures and funding balances. Placeholder for Phase 2."
+      },
+      "signatureViz": {
+        "title": "Signature visualization",
+        "placeholder": "The main narrative chart will live here. No final chart in Phase 1."
+      },
+      "supportingViz": {
+        "title": "Supporting views",
+        "placeholder": "Additional context and comparisons will appear here."
+      },
+      "methodologyPreview": {
+        "title": "Methodology",
+        "body": "We separate raw sources, validation, normalization, and presentation so the story stays auditable as it grows.",
+        "cta": "Read methodology"
+      },
+      "sourcesPreview": {
+        "title": "Sources",
+        "body": "Every figure traces back to documented inputs. The sources page lists references and data lineage.",
+        "cta": "View sources"
+      }
+    },
+    "pipelineSample": {
+      "label": "Illustrative pipeline check",
+      "value": "As of {year}, illustrative total assets: {amount} (sample JSON, not official statistics)."
+    }
+  },
+  "MethodologyPage": {
+    "title": "Methodology",
+    "intro": "This page will document data handling, assumptions, and update cadence. Skeleton for Phase 1.",
+    "listTitle": "Planned layers",
+    "layers": {
+      "raw": "Raw — immutable inputs as received",
+      "validate": "Validation — schema checks (Zod)",
+      "normalize": "Normalize — consistent units and identifiers",
+      "processed": "Processed — curated tables for analysis",
+      "transform": "Transform — chart- and copy-ready view models"
+    }
+  },
+  "SourcesPage": {
+    "title": "Sources",
+    "intro": "Official links and dataset notes will be listed here. Skeleton for Phase 1."
+  },
+  "Footer": {
+    "note": "Phase 1 foundation — content and visuals evolve in later phases."
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "body": "The page you requested does not exist or has moved.",
+    "cta": "Back to story"
+  }
+}

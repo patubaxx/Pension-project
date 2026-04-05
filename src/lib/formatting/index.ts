@@ -1,0 +1,1 @@
+export { formatBillionEur } from "./currency";
