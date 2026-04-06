@@ -2,8 +2,8 @@
   "Meta": {
     "siteName": "Pension Project",
     "homeTitle": "Suomen eläkerahoitus",
-    "homeDescription": "Toimituksellinen näkymä Suomen työeläkerahoitukseen: työeläkevaroja kansantalouden tilinpidosta (Tilastokeskus) ja vuotuisia järjestelmävirtoja (ETK) — mitä luvut kertovat ja miten niitä kannattaa tulkita.",
-    "methodologyTitle": "Menetelmä",
+    "homeDescription": "Tiedottava näkymä Suomen työeläkerahoitukseen: työeläkevaroja kansantalouden tilinpidosta (Tilastokeskus) ja vuotuisia järjestelmävirtoja (ETK) — mitä luvut kertovat ja miten niitä kannattaa tulkita.",
+    "methodologyTitle": "Menetelmät",
     "methodologyDescription": "Miten eläkerahoituksen aineistoja haetaan, tarkistetaan ja esitetään tällä sivustolla.",
     "sourcesTitle": "Lähteet",
     "sourcesDescription": "Tarinassa käytetyt keskeiset aineistot ja viitteet."
@@ -11,7 +11,7 @@
   "Nav": {
     "ariaLabel": "Päänavigaatio",
     "home": "Tarina",
-    "methodology": "Menetelmä",
+    "methodology": "Menetelmät",
     "sources": "Lähteet",
     "language": "Kieli",
     "finnish": "Suomi",
@@ -19,7 +19,7 @@
   },
   "PensionHome": {
     "hero": {
-      "kicker": "Toimituksellinen tietotarina · Suomi",
+      "kicker": "Tietoa eläkejärjestelmästä · Suomi",
       "title": "Miten Suomen eläkejärjestelmää rahoitetaan",
       "lead": "Tällä sivulla tarkastellaan yhtä kansantalouden tilinpidon sarjaa: työeläkelaitosten taseeseen kirjattuja rahoitusvaroja.",
       "framing": "Näkökulma rajautuu taseessa näkyviin rahoitusvaroihin. Se ei kuvaa etuuksia, maksuja tai yksittäisten ihmisten eläkeoikeuksia, eikä se ole ennuste.",
@@ -104,11 +104,11 @@
         "notInference": "Mitä nämä luvut eivät kerro: ne eivät ole arvio maksukyvystä, korvaa laitostason raportointia tai anna pohjaa henkilökohtaisille eläkepäätöksille."
       },
       "storyTrust": {
-        "title": "Menetelmä ja lähteet",
+        "title": "Menetelmät ja lähteet",
         "intro": "Tavoitteena on läpinäkyvyys: lähdeaineisto, käsittelyvaiheet ja viitteet on pidetty selvästi erillään ja helposti tarkistettavina.",
-        "methodologyTitle": "Menetelmä",
+        "methodologyTitle": "Menetelmät",
         "methodologyBody": "Kuvaamme, miten aineisto haetaan, tarkistetaan, normalisoidaan ja muunnetaan sivulla käytettäviksi kaavioiksi ja näkymiksi. Näin esitystapa pysyy läpinäkyvänä ja jäljitettävänä.",
-        "methodologyCta": "Lue menetelmä",
+        "methodologyCta": "Lue menetelmät",
         "sourcesTitle": "Lähteet",
         "sourcesBody": "Sivusto perustuu kahteen aineistoon: Tilastokeskuksen RTP-taulukkoon (11qp, sektori S13141, instrumentti F0), jota käytetään varantokäyrässä, sekä ETK:n rahavirrat01_kaikki-aineistoon, jota käytetään vuosivirroissa ja suppeassa nettovirrassa. Linkit ja lyhyet kuvaukset löytyvät Lähteet-sivulta.",
         "sourcesCta": "Näytä lähteet"
@@ -116,8 +116,8 @@
     }
   },
   "MethodologyPage": {
-    "title": "Menetelmä",
-    "intro": "Sivuston luvut tuotetaan toistettavassa käsittelyketjussa: virallinen PxWeb-vastaus tallennetaan raakana, tarkistetaan, muunnetaan käsitellyksi JSON-tiedostoksi ja lopuksi sivulla käytettäviksi näkymä- ja kaaviomalleiksi. Menetelmäkuvausta voidaan täydentää myöhemmin.",
+    "title": "Menetelmät",
+    "intro": "Sivuston luvut tuotetaan toistettavassa käsittelyketjussa: virallinen PxWeb-vastaus tallennetaan sellaisenaan, tarkistetaan, muunnetaan käsitellyksi JSON-tiedostoksi ja lopuksi sivulla käytettäviksi näkymä- ja kaaviomalleiksi.",
     "datasetsNote": "Etusivulla yhdistyvät kaksi käsiteltyä aineistoa. Tilastokeskuksen RTP-aineistosta (11qp, sektori S13141, instrumentti F0) muodostuu vuoden lopun varantokäyrä. ETK:n rahavirrat01_kaikki-aineistosta taas muodostuvat vuosittaiset rahavirrat. Pylväskaavion nettoluku on ETK-aineistosta johdettu suppea mittari: maksutulo ja sijoitustulos, joista on vähennetty maksetut eläkkeet. Se ei kuvaa maksukykyä, eikä sitä voi suoraan rinnastaa RTP:n varantosaldoihin.",
     "listTitle": "Datakerrokset",
     "layers": {
@@ -126,7 +126,9 @@
       "normalize": "Normalisointi — jäsennetty vuosisarja miljoonina euroina",
       "processed": "Käsitelty aineisto — versioitu JSON, jota sovellus käyttää",
       "transform": "Muunnos — näkymämallit osioille ja kaavioille"
-    }
+    },
+    "implementationTitle": "Sivuston rakenne ja tekninen toteutus",
+    "implementationBody": "Pension Project on kieliversioitu Next.js-toimituksellinen sivusto: käytössä oleva kieli näkyy polussa. Julkiset käsitellyt aineistot luetaan palvelimella ja muunnetaan näkymiksi; kaaviot ovat kevyitä client-komponentteja, jotka vastaanottavat ja näyttävät valmiit sarjat. Teknisesti käytössä ovat Next.js, TypeScript, App Router, Tailwind CSS, käännöksiin next-intl ja rajapintaan Zod — kokonaisuus on pidetty selkeänä, jotta tarina ja data pysyvät helposti jäljitettävinä."
   },
   "SourcesPage": {
     "title": "Lähteet",
@@ -138,10 +140,12 @@
     "etkHeading": "ETK — työeläkkeiden rahavirrat",
     "etkBody": "ETK:n PxWeb-taulukko rahavirrat01_kaikki (työeläkejärjestelmän eläkevarat ja rahavirrat, milj. euroa) sisältää vuosittaiset rahavirtarivit valvottujen eläkelaitosten tilinpäätöksistä, laitokset yhteensä (koodi 399). Aineistoa käytetään virtakäyrissä sekä siitä muodostetussa suppean nettovirran pylväskaaviossa. Se ei ole sama sarja kuin yllä oleva RTP-varanto.",
     "etkPxLabel": "PxWeb-taulukko (ETK)",
-    "etkDocLabel": "ETK — tilaston kuvaus"
+    "etkExplorerLabel": "Tutki rahavirtoja tarkemmin",
+    "etkDocLabel": "ETK — tilaston kuvaus",
+    "openSourceNote": "Projekti on avointa lähdekoodia. <github>Tutustu koodiin ja sivuston toteutukseen GitHubissa</github>."
   },
   "Footer": {
-    "note": "Sivuston luvut perustuvat käsiteltyyn julkiseen eläkeaineistoon. <methodology>Menetelmä</methodology>- ja <sources>Lähteet</sources>-sivuilta löydät rajaukset, määritelmät ja aineistojen taustan."
+    "note": "Sivuston luvut perustuvat käsiteltyyn julkiseen eläkeaineistoon. <methodology>Menetelmät</methodology>- ja <sources>Lähteet</sources>-sivuilta löydät rajaukset, määritelmät ja aineistojen taustan. Projekti on avointa lähdekoodia — <github>tutustu GitHubissa</github>."
   },
   "NotFound": {
     "title": "Sivua ei löytynyt",
