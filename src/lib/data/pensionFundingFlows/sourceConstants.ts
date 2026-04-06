@@ -25,6 +25,9 @@ export const ETK_PENSION_FUNDING_FLOWS = {
     "https://www.etk.fi/tutkimus-tilastot-ja-ennusteet/tilastot/tyoelakkeiden-rahoitus/tyoelakejarjestelman-elakevarat-ja-rahavirrat/",
   dataPortalUrl:
     "https://tilastot.etk.fi/pxweb/fi/ETK/ETK__180tyoelakkeiden_rahoitus__10rahavirrat/rahavirrat01_kaikki.px/",
+  /** ETK Rahti interactive chart for funding flows */
+  fundingFlowsRahtiChartUrl:
+    "https://tilastot.etk.fi/chart/Rahti/rahavirrat.html",
   seriesDefinitionEn:
     "ETK rahavirrat01_kaikki: all earnings-related pension institutions combined (code 399), annual flow lines (Rahavirta) in million EUR, current prices.",
 } as const;

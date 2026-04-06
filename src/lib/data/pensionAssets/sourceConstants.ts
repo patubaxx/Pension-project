@@ -9,7 +9,7 @@
  * Selection: sector S13141 Employment pension schemes, instrument F0 total
  * financial assets, stocks (million EUR), debtor sector total (S0).
  *
- * API: https://pxdata.stat.fi/PXWeb/api/v1/en/StatFin/statfin_rtp_pxt_11qp.px
+ * API: https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__rtp/statfin_rtp_pxt_11qp.px/
  * Documentation: https://stat.fi/en/statistics/rtp
  */
 export const STATFIN_PENSION_ASSETS = {
@@ -21,7 +21,7 @@ export const STATFIN_PENSION_ASSETS = {
     "Financial assets and liabilities, annually (employment pension schemes)",
   documentationUrl: "https://stat.fi/en/statistics/rtp",
   pxWebUiUrl:
-    "https://pxdata.stat.fi/PXWeb/pxweb/en/StatFin/rtp/statfin_rtp_pxt_11qp.px/",
+    "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__rtp/statfin_rtp_pxt_11qp.px/",
   seriesDefinitionEn:
     "Sector S13141 (Employment pension schemes), instrument F0 (Financial assets total), stock positions, million euros.",
 } as const;

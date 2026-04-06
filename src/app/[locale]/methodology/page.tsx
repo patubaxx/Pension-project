@@ -32,6 +32,14 @@ export default async function MethodologyPage({ params }: PageProps) {
         <PageTitle>{t("title")}</PageTitle>
         <Body className="text-lg">{t("intro")}</Body>
         <Body className="max-w-2xl text-stone-600">{t("datasetsNote")}</Body>
+        <div className="border-t border-stone-200 pt-8">
+          <SectionTitle className="text-xl sm:text-2xl">
+            {t("implementationTitle")}
+          </SectionTitle>
+          <Body className="mt-3 max-w-2xl text-stone-600">
+            {t("implementationBody")}
+          </Body>
+        </div>
         <div>
           <SectionTitle className="mt-10 text-xl sm:text-2xl">
             {t("listTitle")}

@@ -8,6 +8,10 @@ import {
   ETK_PENSION_FUNDING_FLOWS,
   STATFIN_PENSION_ASSETS,
 } from "@/lib/data";
+import { PENSION_PROJECT_GITHUB_URL } from "@/lib/site/projectUrls";
+
+const externalSourceLinkClass =
+  "font-medium text-stone-800 underline decoration-stone-300 underline-offset-4 hover:decoration-stone-600 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -44,7 +48,7 @@ export default async function SourcesPage({ params }: PageProps) {
             <li>
               <a
                 href={STATFIN_PENSION_ASSETS.pxWebUiUrl}
-                className="font-medium text-stone-800 underline decoration-stone-300 underline-offset-4 hover:decoration-stone-600 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800"
+                className={externalSourceLinkClass}
                 rel="noopener noreferrer"
               >
                 {t("statfinPxLabel")}
@@ -53,7 +57,7 @@ export default async function SourcesPage({ params }: PageProps) {
             <li>
               <a
                 href={STATFIN_PENSION_ASSETS.documentationUrl}
-                className="font-medium text-stone-800 underline decoration-stone-300 underline-offset-4 hover:decoration-stone-600 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800"
+                className={externalSourceLinkClass}
                 rel="noopener noreferrer"
               >
                 {t("statfinDocLabel")}
@@ -70,7 +74,7 @@ export default async function SourcesPage({ params }: PageProps) {
             <li>
               <a
                 href={ETK_PENSION_FUNDING_FLOWS.dataPortalUrl}
-                className="font-medium text-stone-800 underline decoration-stone-300 underline-offset-4 hover:decoration-stone-600 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800"
+                className={externalSourceLinkClass}
                 rel="noopener noreferrer"
               >
                 {t("etkPxLabel")}
@@ -78,14 +82,38 @@ export default async function SourcesPage({ params }: PageProps) {
             </li>
             <li>
               <a
+                href={ETK_PENSION_FUNDING_FLOWS.fundingFlowsRahtiChartUrl}
+                className={externalSourceLinkClass}
+                rel="noopener noreferrer"
+              >
+                {t("etkExplorerLabel")}
+              </a>
+            </li>
+            <li>
+              <a
                 href={ETK_PENSION_FUNDING_FLOWS.documentationUrl}
-                className="font-medium text-stone-800 underline decoration-stone-300 underline-offset-4 hover:decoration-stone-600 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800"
+                className={externalSourceLinkClass}
                 rel="noopener noreferrer"
               >
                 {t("etkDocLabel")}
               </a>
             </li>
           </ul>
+        </div>
+        <div className="border-t border-stone-200 pt-8">
+          <Body className="max-w-2xl text-stone-600">
+            {t.rich("openSourceNote", {
+              github: (chunks) => (
+                <a
+                  href={PENSION_PROJECT_GITHUB_URL}
+                  className={externalSourceLinkClass}
+                  rel="noopener noreferrer"
+                >
+                  {chunks}
+                </a>
+              ),
+            })}
+          </Body>
         </div>
       </Stack>
     </Section>
